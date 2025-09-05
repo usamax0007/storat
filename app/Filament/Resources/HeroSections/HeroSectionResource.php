@@ -38,13 +38,6 @@ class HeroSectionResource extends Resource
     {
         return $schema
             ->schema([
-                TextInput::make('subtitle_en')
-                    ->label('Subtitle English')
-                    ->maxLength(255),
-                TextInput::make('subtitle_ar')
-                    ->label('Subtitle Arabic')
-                    ->maxLength(255),
-
                 TextInput::make('title_en')
                     ->label('Title English')
                     ->maxLength(255)
@@ -95,7 +88,6 @@ class HeroSectionResource extends Resource
                 TextColumn::make('id')->sortable(),
                 ImageColumn::make('image')->label('Image'),
                 TextColumn::make('title_en')->searchable()->sortable(),
-                TextColumn::make('subtitle_en')->searchable(),
                 TextColumn::make('button_text_en'),
                 TextColumn::make('button_link')->url(true),
                 ToggleColumn::make('is_active')->label('Active'),
