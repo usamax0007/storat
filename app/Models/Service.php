@@ -15,5 +15,6 @@ class Service extends Model
         'description_ar',
         'icon',
         'image',
+        'slug'
     ];
 }

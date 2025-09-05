@@ -48,6 +48,10 @@ class ServiceResource extends Resource
                     ->label('Service Sub Title Arabic')
                     ->required()
                     ->maxLength(255),
+                TextInput::make('slug')
+                    ->label('Slug')
+                    ->required()
+                    ->maxLength(255),
 
                 Textarea::make('description_en')
                     ->label('Service Description English')
