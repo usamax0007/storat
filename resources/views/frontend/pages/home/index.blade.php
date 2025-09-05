@@ -3,33 +3,51 @@
     <!-- Hero Section -->
     <section class="bg-[#e9f3fa] py-10 px-4 lg:px-20">
         <div class=" mx-auto">
-            <div class="relative rounded-xl overflow-hidden bg-[url('images/img_1.jpg')] bg-cover bg-center h-[420px] md:min-h-screen">
+            <div class="relative rounded-xl overflow-hidden bg-cover bg-center h-[420px] md:min-h-screen" id="heroSlider">
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40"></div>
-
-                <!-- Text Overlay -->
-                <div class="relative h-full flex items-center pt-24">
-                    <div class="px-8 md:px-16 text-white max-w-lg">
-                        <p class="text-sm md:text-2xl mb-3">Your Dream real estate partner</p>
-
-                        <h1 class="text-4xl md:text-6xl font-bold leading-[1.05] md:leading-[1.15]">
-                            STORAT <br>
-                            CREDEBILITY <br>
-                            PROFICIENCY <br>
-                            EFFIECIENCY
-                        </h1>
-
-                        <button class="mt-10 inline-flex items-center w-52 gap-4 px-6 py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
-                            <span>Discover more</span>
-                            <svg width="25" height="24" class="ml-2" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M20.6291 12L4.37109 12" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-
-                        </button>
+                @if($heroSections->count() > 1)
+                    <!-- Multiple Hero Sections - Enable Slider Functionality -->
+                    <div class="hero-slides flex transition-transform duration-1000 h-full">
+                        @foreach($heroSections as $index => $heroSection)
+                            <div class="hero-slide w-full flex-shrink-0 bg-cover h-full" style="background-image: url('{{ asset('assets/'.$heroSection->image) }}');">
+                                <!-- Text Overlay -->
+                                <div class="relative h-full flex items-center pt-24">
+                                    <div class="px-8 md:px-16 text-white max-w-lg">
+                                        <p class="text-sm md:text-2xl mb-3">{{$heroSection->title_en}}</p>
+                                        <h1 class="text-4xl md:text-6xl font-bold leading-[1.05] md:leading-[1.15]">
+                                            {{$heroSection->description_en}} <br>
+                                        </h1>
+                                        <a href="{{$heroSection->button_link}}"  class="mt-10 inline-flex items-center w-52 gap-4 px-6 py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
+                                            <span>{{$heroSection->button_text_en}}</span>
+                                            <svg width="25" height="24" class="ml-2" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M20.6291 12L4.37109 12" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                </div>
-
+                @else
+                    <!-- Single Hero Section - No Slider -->
+                    <div class="relative h-full flex items-center pt-24 h-full" style="background-image: url('{{ asset('assets/'.$heroSection->image) }}');">
+                        <div class="px-8 md:px-16 text-white max-w-lg">
+                            <p class="text-sm md:text-2xl mb-3">{{$heroSections->first()->title_en}}</p>
+                            <h1 class="text-4xl md:text-6xl font-bold leading-[1.05] md:leading-[1.15]">
+                                {{$heroSections->first()->description_en}} <br>
+                            </h1>
+                            <a href="{{$heroSections->first()->button_link}}"  class="mt-10 inline-flex items-center w-52 gap-4 px-6 py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
+                                <span>{{$heroSections->first()->button_text_en}}</span>
+                                <svg width="25" height="24" class="ml-2" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M20.6291 12L4.37109 12" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </section>

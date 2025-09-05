@@ -6,6 +6,22 @@
     <title>Storat</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
+<style>
+    .hero-slides {
+        display: flex;
+        transition: transform 1s ease-in-out;
+    }
+
+    .hero-slide {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+
     <body>
         @include('frontend.partials.header')
 
@@ -87,6 +103,23 @@
 
             // Initial render
             render(idx);
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const heroSlider = document.getElementById('heroSlider');
+                const slides = heroSlider.querySelector('.hero-slides');
+                const slideItems = heroSlider.querySelectorAll('.hero-slide');
+                let currentIndex = 0;
+                let totalSlides = slideItems.length;
+
+                if (totalSlides > 1) {
+                    setInterval(function() {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        slides.style.transform = `translateX(-${100 * currentIndex}%)`;
+                    }, 7000);
+                }
+            });
         </script>
     </body>
 </html>
