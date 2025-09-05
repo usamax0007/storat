@@ -9,6 +9,7 @@ use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Schemas\Components\Section;
 
 class CmsSettings extends Page implements HasForms
 {
@@ -40,6 +41,8 @@ class CmsSettings extends Page implements HasForms
     protected function getFormSchema(): array
     {
         return [
+         Section::make('Impact Page')
+        ->schema([
             TextInput::make('phone1')->label('Phone 1')->tel(),
             TextInput::make('phone2')->label('Phone 2')->tel(),
             TextInput::make('phone3')->label('Phone 3')->tel(),
@@ -50,6 +53,7 @@ class CmsSettings extends Page implements HasForms
             TextInput::make('linkedin')->label('LinkedIn URL'),
             TextInput::make('facebook')->label('Facebook URL'),
             TextInput::make('twitter')->label('Twitter URL'),
+        ])->columns(2)
         ];
     }
 
