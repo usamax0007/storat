@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('about_sections', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();        // e.g. STORAT
-            $table->string('subtitle')->nullable();     // e.g. Real Estate Consultancy Co.
-            $table->longText('content')->nullable();    // description paragraphs
+            $table->string('title_en')->nullable();        // e.g. STORAT
+            $table->string('title_ar')->nullable();        // e.g. STORAT
+            $table->string('subtitle_en')->nullable();     // e.g. Real Estate Consultancy Co.
+            $table->string('subtitle_ar')->nullable();     // e.g. Real Estate Consultancy Co.
+            $table->longText('content_en')->nullable();    // description paragraphs
+            $table->longText('content_ar')->nullable();    // description paragraphs
             $table->string('image')->nullable();        // right side image
             $table->timestamps();
         });

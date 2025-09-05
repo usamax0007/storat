@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('hero_sections', function (Blueprint $table) {
             $table->id();
-            $table->string('subtitle')->nullable();
-            $table->string('title')->nullable();
-            $table->text('description')->nullable();
+            $table->string('subtitle_en')->nullable();
+            $table->string('subtitle_ar')->nullable();
+            $table->string('title_en')->nullable();
+            $table->string('title_ar')->nullable();
+            $table->text('description_en')->nullable();
+            $table->text('description_ar')->nullable();
             $table->string('image')->nullable();
-            $table->string('button_text')->nullable();
+            $table->string('button_text_en')->nullable();
+            $table->string('button_text_ar')->nullable();
             $table->string('button_link')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();

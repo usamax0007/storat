@@ -38,17 +38,29 @@ class HeroSectionResource extends Resource
     {
         return $schema
             ->schema([
-                TextInput::make('subtitle')
-                    ->label('Subtitle')
+                TextInput::make('subtitle_en')
+                    ->label('Subtitle English')
+                    ->maxLength(255),
+                TextInput::make('subtitle_ar')
+                    ->label('Subtitle Arabic')
                     ->maxLength(255),
 
-                TextInput::make('title')
-                    ->label('Title')
+                TextInput::make('title_en')
+                    ->label('Title English')
                     ->maxLength(255)
                     ->required(),
 
-                Textarea::make('description')
-                    ->label('Description')
+                TextInput::make('title_ar')
+                    ->label('Title Arabic')
+                    ->maxLength(255)
+                    ->required(),
+
+                Textarea::make('description_en')
+                    ->label('Description English')
+                    ->rows(3)
+                    ->columnSpanFull(),
+                Textarea::make('description_ar')
+                    ->label('Description Arabic')
                     ->rows(3)
                     ->columnSpanFull(),
 
@@ -59,8 +71,12 @@ class HeroSectionResource extends Resource
                     ->imageEditor()
                     ->required(),
 
-                TextInput::make('button_text')
-                    ->label('Button Text')
+                TextInput::make('button_text_en')
+                    ->label('Button Text English')
+                    ->maxLength(255),
+
+                TextInput::make('button_text_ar')
+                    ->label('Button Text English')
                     ->maxLength(255),
 
                 TextInput::make('button_link')
@@ -78,9 +94,9 @@ class HeroSectionResource extends Resource
             ->columns([
                 TextColumn::make('id')->sortable(),
                 ImageColumn::make('image')->label('Image'),
-                TextColumn::make('title')->searchable()->sortable(),
-                TextColumn::make('subtitle')->searchable(),
-                TextColumn::make('button_text'),
+                TextColumn::make('title_en')->searchable()->sortable(),
+                TextColumn::make('subtitle_en')->searchable(),
+                TextColumn::make('button_text_en'),
                 TextColumn::make('button_link')->url(true),
                 ToggleColumn::make('is_active')->label('Active'),
                 TextColumn::make('created_at')->dateTime(),

@@ -31,17 +31,30 @@ class ServiceResource extends Resource
     {
         return $schema
             ->schema([
-                TextInput::make('title')
-                    ->label('Service Title')
-                    ->required()
-                    ->maxLength(255),
-                TextInput::make('sub_title')
-                    ->label('Service Sub Title')
+                TextInput::make('title_en')
+                    ->label('Service Title English')
                     ->required()
                     ->maxLength(255),
 
-                Textarea::make('description')
-                    ->label('Service Description')
+                TextInput::make('title_ar')
+                    ->label('Service Title Arabic')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('sub_title_en')
+                    ->label('Service Sub Title English')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('sub_title_ar')
+                    ->label('Service Sub Title Arabic')
+                    ->required()
+                    ->maxLength(255),
+
+                Textarea::make('description_en')
+                    ->label('Service Description English')
+                    ->rows(4)
+                    ->required(),
+                Textarea::make('description_ar')
+                    ->label('Service Description Arabic')
                     ->rows(4)
                     ->required(),
 
@@ -59,9 +72,9 @@ class ServiceResource extends Resource
         return $table
             ->columns(components: [
                 ImageColumn::make('icon')->label('Icon')->circular(),
-                TextColumn::make('title')->label('Title')->searchable(),
-                TextColumn::make('sub_title')->label('Sub Title')->searchable(),
-                TextColumn::make('description')->label('Description')->limit(50),
+                TextColumn::make('title_en')->label('Title')->searchable(),
+                TextColumn::make('sub_title_en')->label('Sub Title')->searchable(),
+                TextColumn::make('description_en')->label('Description')->limit(50),
             ]);
     }
 

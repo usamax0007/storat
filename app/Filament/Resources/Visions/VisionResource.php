@@ -31,12 +31,19 @@ class VisionResource extends Resource
     {
         return $schema
             ->schema([
-                TextInput::make('title')
-                    ->label('Service Title')
+                TextInput::make('title_en')
+                    ->label('Service Title English')
                     ->required()
                     ->maxLength(255),
-                TextInput::make('description')
-                    ->label('Service Description')
+                TextInput::make('title_ar')
+                    ->label('Service Title Arabic')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('description_en')
+                    ->label('Service Description English')
+                    ->required(),
+                TextInput::make('description_ar')
+                    ->label('Service Description Arabic')
                     ->required(),
                 FileUpload::make('image')->label('image')->image(),
             ]);
@@ -47,9 +54,9 @@ class VisionResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('image'),
-                TextColumn::make('title')
+                TextColumn::make('title_en')
                 ->label('Service Title'),
-                TextColumn::make('description')
+                TextColumn::make('description_en')
                 ->label('Service Description'),
             ]);
     }
