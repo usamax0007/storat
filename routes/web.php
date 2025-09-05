@@ -6,4 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/services',[ServicesController::class,'index'])->name('services');
+// Route for service details page
+Route::get('/service/{id}', [ServicesController::class, 'show'])->name('service.show');
+

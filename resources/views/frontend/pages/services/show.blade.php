@@ -11,7 +11,7 @@
                 <div class="relative h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 text-center items-center">
                     <!-- Title -->
                     <h1 class="text-white font-bold leading-tight text-3xl sm:text-4xl md:text-6xl">
-                        Retail real estate &amp; Acquisition
+                        {{$service->title_en}}
                     </h1>
 
                     <!-- Breadcrumb -->
@@ -38,7 +38,7 @@
                             </li>
 
                             <li class="text-white/95">
-                                Retail real estate &amp; Acquisition
+                                {{$service->title_en}}
                             </li>
                         </ol>
                     </nav>
@@ -51,34 +51,16 @@
 
             <!-- Heading -->
             <h2 class="text-4xl md:text-6xl font-bold text-gray-800 mb-8">
-                Retail real estate &amp; Acquisition
+                {{$service->title_en}}
             </h2>
 
             <!-- Paragraphs -->
             <div class="space-y-8 text-gray-600 text-base md:text-lg leading-relaxed">
                 <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                    content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
-                    as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions
-                    have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    {{$service->description_en}}
                 </p>
 
-                <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                    content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
-                    as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions
-                    have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                </p>
 
-                <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                    content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
-                    as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions
-                    have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                </p>
             </div>
         </div>
     </section>

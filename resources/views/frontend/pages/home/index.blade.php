@@ -1,13 +1,10 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <!-- Hero Section -->
     <section class="bg-[#e9f3fa] py-10 px-4 lg:px-20">
         <div class=" mx-auto">
             <div class="relative rounded-xl overflow-hidden bg-cover bg-center h-[420px] md:min-h-screen" id="heroSlider">
-                <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40"></div>
                 @if($heroSections->count() > 1)
-                    <!-- Multiple Hero Sections - Enable Slider Functionality -->
                     <div class="hero-slides flex transition-transform duration-1000 h-full">
                         @foreach($heroSections as $index => $heroSection)
                             <div class="hero-slide w-full flex-shrink-0 bg-cover h-full" style="background-image: url('{{ asset('assets/'.$heroSection->image) }}');">
@@ -31,8 +28,7 @@
                         @endforeach
                     </div>
                 @else
-                    <!-- Single Hero Section - No Slider -->
-                    <div class="relative h-full flex items-center pt-24 h-full" style="background-image: url('{{ asset('assets/'.$heroSection->image) }}');">
+                    <div class="relative h-full flex items-center pt-24 h-full bg-cover" style="background-image: url('{{ asset('assets/'.$heroSections->first()->image) }}');">
                         <div class="px-8 md:px-16 text-white max-w-lg">
                             <p class="text-sm md:text-2xl mb-3">{{$heroSections->first()->title_en}}</p>
                             <h1 class="text-4xl md:text-6xl font-bold leading-[1.05] md:leading-[1.15]">
@@ -49,7 +45,6 @@
                     </div>
                 @endif
             </div>
-        </div>
     </section>
     <!-- About / Intro Section -->
     <section class="bg-white py-8 md:py-16">
@@ -116,104 +111,28 @@
     <!-- Services Section -->
     <section class="bg-[#e9f3fa] py-20">
         <div class="mx-auto px-4 px-10 lg:px-20">
-            <!-- Heading -->
             <h2 class="text-3xl md:text-6xl font-bold text-center text-black mb-28">
                 Our Services
             </h2>
-
-            <!-- Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-28">
-
-                <!-- Card 1 -->
-                <div class="relative bg-white rounded-xl shadow-md pt-28 pb-10 px-8 text-center">
-                    <div class="absolute -top-20 left-1/2 -translate-x-1/2">
-                        <div class="w-36 h-36 rounded-full bg-[#0F548E] grid place-items-center shadow-md">
-                            <img src="images/img_2.png" alt="Retail Icon" class="w-24 h-24">
+                @foreach($services as $service)
+                    <div class="relative bg-white rounded-xl shadow-md pt-28 pb-10 px-8 text-center">
+                        <div class="absolute -top-20 left-1/2 -translate-x-1/2">
+                            <div class="w-36 h-36 rounded-full bg-[#0F548E] grid place-items-center shadow-md">
+                                <img src="{{ asset('assets/'.$service->image) }}" alt="{{ $service->title_en }}" class="w-24 h-24">
+                            </div>
                         </div>
-                    </div>
-                    <h3 class="text-3xl font-bold text-black leading-tight mt-6">
-                        Retail real estate <br>& Acquisition
-                    </h3>
-                    <p class="mt-5 text-[22px] text-gray-600 leading-[1.4]">
-                        We offer unique financing solutions by utilizing our own capital, resulting in a superior project structure for greater flexibility.
-                    </p>
-                </div>
+                        <h3 class="text-3xl font-bold text-black leading-tight mt-6">
+                            <a href="{{ route('service.show', $service->id) }}">
+                                {{$service->title_en}}
+                            </a>
 
-                <!-- Card 2 -->
-                <div class="relative bg-white rounded-xl shadow-md pt-28 pb-10 px-8 text-center">
-                    <div class="absolute -top-20 left-1/2 -translate-x-1/2">
-                        <div class="w-36 h-36 rounded-full bg-[#0F548E] grid place-items-center shadow-md">
-                            <img src="images/img_3.png" alt="Leasing Icon" class="w-24 h-24">
-                        </div>
+                        </h3>
+                        <p class="mt-5 text-[22px] text-gray-600 leading-[1.4]">
+                            {{$service->sub_title_en}}
+                        </p>
                     </div>
-                    <h3 class="text-3xl font-bold text-black leading-tight mt-6">
-                        Leasing, Buying And <br> Selling, For All Real Estate <br> Requirements
-                    </h3>
-                    <p class="mt-5 text-[22px] text-gray-600 leading-[1.4]">
-                        Our dedicated team provides comprehensive services from concept to delivery.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="relative bg-white rounded-xl shadow-md pt-28 pb-10 px-8 text-center">
-                    <div class="absolute -top-20 left-1/2 -translate-x-1/2">
-                        <div class="w-36 h-36 rounded-full bg-[#0F548E] grid place-items-center shadow-md">
-                            <img src="images/img_4.png" alt="Consultancy Icon" class="w-24 h-24">
-                        </div>
-                    </div>
-                    <h3 class="text-3xl font-bold text-black leading-tight mt-6">
-                        Consultancy <br> Package
-                    </h3>
-                    <p class="mt-5 text-[22px] text-gray-600 leading-[1.4]">
-                        Our experience, communication, and proactive management are vital to the delivery and success of every project.
-                    </p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="relative bg-white rounded-xl shadow-md pt-28 pb-10 px-8 text-center">
-                    <div class="absolute -top-20 left-1/2 -translate-x-1/2">
-                        <div class="w-36 h-36 rounded-full bg-[#0F548E] grid place-items-center shadow-md">
-                            <img src="images/img_5.png" alt="Brands Icon" class="w-24 h-24">
-                        </div>
-                    </div>
-                    <h3 class="text-3xl font-bold text-black leading-tight mt-6">
-                        Brands Acquisitions
-                    </h3>
-                    <p class="mt-5 text-[22px] text-gray-600 leading-[1.4]">
-                        We have a heritage of meeting our clients’ vision and goals for each project, without exception.
-                    </p>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="relative bg-white rounded-xl shadow-md pt-28 pb-10 px-8 text-center">
-                    <div class="absolute -top-20 left-1/2 -translate-x-1/2">
-                        <div class="w-36 h-36 rounded-full bg-[#0F548E] grid place-items-center shadow-md">
-                            <img src="images/img_6.png" alt="Analysis Icon" class="w-24 h-24">
-                        </div>
-                    </div>
-                    <h3 class="text-3xl font-bold text-black leading-tight mt-6">
-                        Best Use Analyses
-                    </h3>
-                    <p class="mt-5 text-[22px] text-gray-600 leading-[1.4]">
-                        We offer unique financing solutions by utilizing our own capital, resulting in a superior project structure for greater flexibility.
-                    </p>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="relative bg-white rounded-xl shadow-md pt-28 pb-10 px-8 text-center">
-                    <div class="absolute -top-20 left-1/2 -translate-x-1/2">
-                        <div class="w-36 h-36 rounded-full bg-[#0F548E] grid place-items-center shadow-md">
-                            <img src="images/img_7.png" alt="Valuation Icon" class="w-24 h-24">
-                        </div>
-                    </div>
-                    <h3 class="text-3xl font-bold text-black leading-tight mt-6">
-                        Property Valuation
-                    </h3>
-                    <p class="mt-5 text-[22px] text-gray-600 leading-[1.4]">
-                        We have a heritage of meeting our clients’ vision and goals for each project, without exception.
-                    </p>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>

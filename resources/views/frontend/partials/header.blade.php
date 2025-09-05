@@ -14,7 +14,7 @@
                 <ul class="grid grid-flow-col whitespace-nowrap gap-8 xl:gap-16 text-xl font-bold text-black">
                     <li><a href="{{route('home')}}" class="hover:opacity-70">Home</a></li>
                     <li><a href="#" class="hover:opacity-70">About Us</a></li>
-                    <li><a href="{{route('services')}}" class="hover:opacity-70">Services</a></li>
+                    <li><a href="#" class="hover:opacity-70">Services</a></li>
                     <li><a href="#" class="hover:opacity-70">Vision</a></li>
                     <li><a href="#" class="hover:opacity-70">All Projects</a></li>
                     <li><a href="#" class="hover:opacity-70">Clients</a></li>
@@ -48,7 +48,7 @@
             <ul class="mt-2 mb-3 flex flex-col gap-1 text-xl font-semibold text-black">
                 <li><a href="{{route('home')}}" class="block px-3 py-2 rounded hover:bg-white/40">Home</a></li>
                 <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">About Us</a></li>
-                <li><a href="{{route('services')}}" class="block px-3 py-2 rounded hover:bg-white/40">Services</a></li>
+                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">Services</a></li>
                 <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">Vision</a></li>
                 <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">All Projects</a></li>
                 <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">Clients</a></li>

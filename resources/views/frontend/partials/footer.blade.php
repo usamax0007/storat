@@ -90,7 +90,7 @@
                 <ul class="space-y-3">
                     <li><a href="{{route('home')}}" class="font-semibold hover:opacity-80">Home</a></li>
                     <li><a href="#" class="font-semibold hover:opacity-80">About Us</a></li>
-                    <li><a href="{{route('services')}}" class="font-semibold hover:opacity-80">Services</a></li>
+                    <li><a href="#" class="font-semibold hover:opacity-80">Services</a></li>
                     <li><a href="#" class="font-semibold hover:opacity-80">Vision</a></li>
                     <li><a href="#" class="font-semibold hover:opacity-80">All Project</a></li>
                     <li><a href="#" class="font-semibold hover:opacity-80">Clients</a></li>
