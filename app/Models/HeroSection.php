@@ -15,6 +15,16 @@ class HeroSection extends Model
         'button_text_en',
         'button_text_ar',
         'button_link',
+        'rent_heading_en',
+        'rent_sub_heading_ar',
+        'rent_heading_ar',
+        'rent_sub_heading_ar',
+        'rent_icon',
+        'properties_heading_en',
+        'properties_sub_heading_en',
+        'properties_heading_ar',
+        'properties_sub_heading_ar',
+        'properties_icon',
         'is_active',
     ];
 }

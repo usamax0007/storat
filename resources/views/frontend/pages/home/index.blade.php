@@ -1,67 +1,153 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <section class="bg-[#e9f3fa] py-10 px-4 lg:px-20">
-        <div class=" mx-auto">
-            <div class="relative rounded-xl overflow-hidden bg-cover bg-center h-[420px] md:min-h-screen" id="heroSlider">
+    <section class="bg-[#e9f3fa]">
+        <div class="mx-auto">
+            <div class="relative overflow-hidden bg-cover bg-center h-[920px] md:min-h-screen" id="heroSlider">
                 <div class="absolute inset-0 bg-black/40"></div>
+
                 @if($heroSections->count() > 1)
                     <div class="hero-slides flex transition-transform duration-1000 h-full">
                         @foreach($heroSections as $index => $heroSection)
-                            <div class="hero-slide w-full flex-shrink-0 bg-cover h-full" style="background-image: url('{{ asset('assets/'.$heroSection->image) }}');">
+                            <div class="hero-slide w-full flex-shrink-0 bg-cover h-full"
+                                 style="background-image: url('{{ asset('assets/'.$heroSection->image) }}');">
+
                                 <!-- Text Overlay -->
-                                <div class="relative h-full flex items-center pt-24">
-                                    <div class="px-8 md:px-16 text-white max-w-lg">
-                                        <p class="text-sm md:text-2xl mb-3">{{$heroSection->title_en}}</p>
-                                        <h1 class="text-4xl md:text-6xl font-bold leading-[1.05] md:leading-[1.15]">
+                                <div class="relative h-full flex items-center pt-16 md:pt-24">
+                                    <div class="px-4 sm:px-8 md:px-16 text-white max-w-lg">
+                                        <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{$heroSection->title_en}}</p>
+                                        <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold leading-tight md:leading-[1.15]">
                                             {{$heroSection->description_en}} <br>
                                         </h1>
-                                        <a href="{{$heroSection->button_link}}"  class="mt-10 inline-flex items-center w-52 gap-4 px-6 py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
-                                            <span>{{$heroSection->button_text_en}}</span>
-                                            <svg width="25" height="24" class="ml-2" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M20.6291 12L4.37109 12" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <a href="{{$heroSection->button_link}}"
+                                           class="mt-6 md:mt-10 inline-flex items-center w-40 sm:w-52 gap-2 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
+                                            <span class="text-sm sm:text-base">{{$heroSection->button_text_en}}</span>
+                                            <svg width="22" height="22" class="ml-1 sm:ml-2" viewBox="0 0 25 24" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727"
+                                                      stroke="#0F548E" stroke-width="2" stroke-linecap="round"
+                                                      stroke-linejoin="round"/>
+                                                <path d="M20.6291 12L4.37109 12" stroke="#0F548E" stroke-width="2"
+                                                      stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                         </a>
                                     </div>
+                                </div>
+
+                                <!-- White Info Box -->
+                                <div class="absolute bottom-6 sm:bottom-12 md:bottom-[206px] right-4 sm:right-6 md:right-8
+                                        bg-white rounded-2xl shadow-lg p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-[90%] sm:w-auto">
+
+                                    <!-- Renters -->
+                                    <div class="flex flex-col items-start gap-2 sm:gap-3">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
+                                            <img src="{{ asset('assets/' .$heroSections->rent_icon) }}" alt="">
+                                        </div>
+                                        <div>
+                                            <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->rent_heading_en}}</p>
+                                            <p class="text-xs sm:text-sm text-black">{{$heroSections->rent_sub_heading_en}}</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Properties -->
+                                    <div class="flex flex-col items-start gap-2 sm:gap-3">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
+                                            <img src="{{ asset('assets/' .$heroSections->properties_icon) }}" alt="">
+                                        </div>
+                                        <div>
+                                            <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->properties_heading_en}}</p>
+                                            <p class="text-xs sm:text-sm text-black">{{$heroSections->properties_sub_heading_en}}</p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 @else
-                    <div class="relative h-full flex items-center pt-24 h-full bg-cover" style="background-image: url('{{ asset('assets/'.$heroSections->first()->image) }}');">
-                        <div class="px-8 md:px-16 text-white max-w-lg">
-                            <p class="text-sm md:text-2xl mb-3">{{$heroSections->first()->title_en}}</p>
-                            <h1 class="text-4xl md:text-6xl font-bold leading-[1.05] md:leading-[1.15]">
+                    <div class="relative h-full flex items-center pt-16 md:pt-24 h-full bg-cover"
+                         style="background-image: url('{{ asset('assets/'.$heroSections->first()->image) }}');">
+                        <div class="px-4 sm:px-8 md:px-16 text-white max-w-lg">
+                            <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{$heroSections->first()->title_en}}</p>
+                            <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold leading-tight md:leading-[1.15]">
                                 {{$heroSections->first()->description_en}} <br>
                             </h1>
-                            <a href="{{$heroSections->first()->button_link}}"  class="mt-10 inline-flex items-center w-52 gap-4 px-6 py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
-                                <span>{{$heroSections->first()->button_text_en}}</span>
-                                <svg width="25" height="24" class="ml-2" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M20.6291 12L4.37109 12" stroke="#0F548E" stroke-width="2.48849" stroke-linecap="round" stroke-linejoin="round"/>
+                            <a href="{{$heroSections->first()->button_link}}"
+                               class="mt-6 md:mt-10 inline-flex items-center w-40 sm:w-52 gap-2 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
+                                <span class="text-sm sm:text-base">{{$heroSections->first()->button_text_en}}</span>
+                                <svg width="22" height="22" class="ml-1 sm:ml-2" viewBox="0 0 25 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727" stroke="#0F548E"
+                                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M20.6291 12L4.37109 12" stroke="#0F548E" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
+                        </div>
+
+                        <!-- White Info Box (Single Image) -->
+                        <div class="absolute bottom-6 sm:bottom-12 md:bottom-[206px] right-4 sm:right-6 md:right-8
+                                bg-white rounded-2xl shadow-lg p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-[90%] sm:w-auto">
+
+                            <!-- Renters -->
+                            <div class="flex flex-col items-start gap-2 sm:gap-3">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
+                                    <img src="{{ asset('assets/' .$heroSections->first()->rent_icon) }}" alt="">
+                                </div>
+                                <div>
+                                    <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->first()->rent_heading_en}}</p>
+                                    <p class="text-xs sm:text-sm text-black">{{$heroSections->first()->rent_sub_heading_en}}</p>
+                                </div>
+                            </div>
+
+                            <!-- Properties -->
+                            <div class="flex flex-col items-start gap-2 sm:gap-3">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
+                                    <img src="{{ asset('assets/' .$heroSections->first()->properties_icon) }}" alt="">
+                                </div>
+                                <div>
+                                    <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->first()->properties_heading_en}}</p>
+                                    <p class="text-xs sm:text-sm text-black">{{$heroSections->first()->properties_sub_heading_en}}</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 @endif
             </div>
+        </div>
     </section>
-    <!-- About / Intro Section -->
-    <section class="bg-white py-8 md:py-16">
-        <div class="mx-auto px-4 lg:px-20">
-            <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-                <!-- Left: Text -->
-                <div class="space-y-5 mt-10 md:pt-20">
-                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-black">
+
+    <!-- About / Intro Section -->
+    <section class="bg-white py-12 md:py-20">
+        <div class="max-w-full mx-auto px-4 lg:px-12">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Images -->
+                <div class="relative">
+                    <!-- Main big image -->
+                    <div class="rounded-xl w-[470px] overflow-hidden shadow-md">
+                        <img src="{{ asset('assets/images/img_27.png') }}"
+                             alt="House"
+                             class="w-[470px] h-[420px] md:h-[520px] object-cover">
+                    </div>
+
+                    <!-- Small overlapping image -->
+                    <div class="absolute bottom-[-100px] left-[180px] md:left-[316px] w-[220px] md:w-[260px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
+                        <img src="{{ asset('assets/images/img_28.png') }}"
+                             alt="Modern building"
+                             class="w-full h-[200px] md:h-[240px] object-cover">
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="space-y-5 mt-12 md:mt-0">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-black tracking-tight">
                         STORAT
                     </h2>
-
-                    <p class="text-2xl md:text-4xl font-semibold text-gray-900">
+                    <p class="text-xl md:text-2xl font-semibold text-gray-900">
                         Real Estate Consultancy Co.
                     </p>
-
-                    <div class="space-y-4 text-[13px] md:text-[15px] leading-relaxed text-[#62636C]">
+                    <div class="space-y-4 text-[14px] md:text-[16px] leading-relaxed text-[#62636C]">
                         <p>
                             Put your Real Estate needs in our hands and lets be your Property Department,
                             nowadays having your Property Department becoming an old school, the growth of
@@ -92,22 +178,10 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Right: Image -->
-                <div class="md:pl-4">
-                    <div class="rounded-xl overflow-hidden ring-1 ring-black/10 shadow-sm bg-gray-100">
-                        <!-- Replace with your image -->
-                        <img
-                            src="images/img_1.png"
-                            alt="Modern building"
-                            class="w-full h-[420px] md:h-[800px] object-cover fit-content"
-                        />
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
+
     <!-- Services Section -->
     <section class="bg-[#e9f3fa] py-20">
         <div class="mx-auto px-4 px-10 lg:px-20">

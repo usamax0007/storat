@@ -21,6 +21,16 @@ return new class extends Migration
             $table->string('button_text_en')->nullable();
             $table->string('button_text_ar')->nullable();
             $table->string('button_link')->nullable();
+            $table->string('rent_heading_en')->nullable();
+            $table->string('rent_sub_heading_en')->nullable();
+            $table->string('rent_heading_ar')->nullable();
+            $table->string('rent_sub_heading_ar')->nullable();
+            $table->string('rent_icon')->nullable();
+            $table->string('properties_heading_en')->nullable();
+            $table->string('properties_sub_heading_en')->nullable();
+            $table->string('properties_heading_ar')->nullable();
+            $table->string('properties_sub_heading_ar')->nullable();
+            $table->string('properties_icon')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

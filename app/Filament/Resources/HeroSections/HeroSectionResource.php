@@ -52,6 +52,7 @@ class HeroSectionResource extends Resource
                     ->label('Description English')
                     ->rows(3)
                     ->columnSpanFull(),
+
                 Textarea::make('description_ar')
                     ->label('Description Arabic')
                     ->rows(3)
@@ -69,12 +70,59 @@ class HeroSectionResource extends Resource
                     ->maxLength(255),
 
                 TextInput::make('button_text_ar')
-                    ->label('Button Text English')
+                    ->label('Button Text Arabic')
                     ->maxLength(255),
 
                 TextInput::make('button_link')
                     ->label('Button Link')
                     ->url(),
+
+                // Rent Section
+                TextInput::make('rent_heading_en')
+                    ->label('Rent Heading English')
+                    ->maxLength(255),
+
+                TextInput::make('rent_sub_heading_en')
+                    ->label('Rent Sub Heading English')
+                    ->maxLength(255),
+
+                TextInput::make('rent_heading_ar')
+                    ->label('Rent Heading Arabic')
+                    ->maxLength(255),
+
+                TextInput::make('rent_sub_heading_ar')
+                    ->label('Rent Sub Heading Arabic')
+                    ->maxLength(255),
+
+                FileUpload::make('rent_icon')
+                    ->label('Rent Icon')
+                    ->directory('hero-sections/icons')
+                    ->image()
+                    ->imageEditor(),
+
+                // Properties Section
+                TextInput::make('properties_heading_en')
+                    ->label('Properties Heading English')
+                    ->maxLength(255),
+
+                TextInput::make('properties_sub_heading_en')
+                    ->label('Properties Sub Heading English')
+                    ->maxLength(255),
+
+                TextInput::make('properties_heading_ar')
+                    ->label('Properties Heading Arabic')
+                    ->maxLength(255),
+
+                TextInput::make('properties_sub_heading_ar')
+                    ->label('Properties Sub Heading Arabic')
+                    ->maxLength(255),
+
+                FileUpload::make('properties_icon')
+                    ->label('Properties Icon')
+                    ->directory('hero-sections/icons')
+                    ->image()
+                    ->imageEditor(),
+
                 Toggle::make('is_active')
                     ->label('Active')
                     ->default(true),

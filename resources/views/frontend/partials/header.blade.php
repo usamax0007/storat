@@ -1,4 +1,4 @@
-<header class="bg-[#e9f3fa]">
+<header class="absolute w-full z-50">
     <div class="mx-auto px-4 lg:px-20">
         <!-- Hidden checkbox = menu toggle (no JS needed) -->
         <input id="nav-toggle" type="checkbox" class="peer hidden" />
@@ -11,7 +11,7 @@
 
             <!-- Center: Desktop Menu -->
             <nav class="hidden lg:flex justify-center">
-                <ul class="grid grid-flow-col whitespace-nowrap gap-8 xl:gap-16 text-xl font-bold text-black">
+                <ul class="grid grid-flow-col whitespace-nowrap gap-8 xl:gap-8 text-xl font-bold text-white">
                     <li><a href="{{route('home')}}" class="hover:opacity-70">Home</a></li>
                     <li><a href="#" class="hover:opacity-70">About Us</a></li>
                     <li><a href="#" class="hover:opacity-70">Services</a></li>
@@ -45,7 +45,7 @@
 
         <!-- Mobile menu: expands when the checkbox is checked -->
         <nav class="lg:hidden overflow-hidden max-h-0 peer-checked:max-h-96 transition-all duration-300">
-            <ul class="mt-2 mb-3 flex flex-col gap-1 text-xl font-semibold text-black">
+            <ul class="mt-2 mb-3 flex flex-col gap-1 text-xl font-semibold text-black bg-white">
                 <li><a href="{{route('home')}}" class="block px-3 py-2 rounded hover:bg-white/40">Home</a></li>
                 <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">About Us</a></li>
                 <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">Services</a></li>
