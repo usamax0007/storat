@@ -401,149 +401,71 @@
         </div>
     </section>
     <!-- Contact Section -->
-    <section class="bg-[#e9f3fa] py-16">
-        <div class="mx-auto px-4 md:px-20 text-center">
-            <!-- Heading -->
-            <h2 class="text-3xl md:text-5xl font-bold text-black leading-snug mb-12">
-                Get professional and specialist real estate<br class="hidden md:block"> advice
+    <section class="bg-blue-50 py-12 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-3xl md:text-5xl font-bold mb-8">
+                Get professional and specialist real estate advice
             </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <!-- Card 1: Call Us -->
-                <div class="bg-white rounded-xl border border-[#0F548E] py-4 px-8 text-left shadow-sm">
-                    <!-- Icon -->
-                    <div class="w-10 h-10 rounded-lg bg-[#F4F7FA] flex items-center justify-center mb-8">
-                        <!-- Phone Icon -->
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" y="0.5" width="39" height="39" rx="9.5" fill="#FDFDFE"/>
-                            <rect x="0.5" y="0.5" width="39" height="39" rx="9.5" stroke="#CDCED7"/>
-                            <path d="M28.0002 18.999H30.0002C30.0002 13.869 26.1272 10 20.9902 10V12C25.0522 12 28.0002 14.943 28.0002 18.999Z" fill="black"/>
-                            <path d="M21.0003 15.9983C23.1033 15.9983 24.0003 16.8953 24.0003 18.9983H26.0003C26.0003 15.7733 24.2253 13.9983 21.0003 13.9983V15.9983ZM24.4223 21.4413C24.2301 21.2666 23.9776 21.1735 23.7181 21.1815C23.4585 21.1895 23.2123 21.2981 23.0313 21.4843L20.6383 23.9453C20.0623 23.8353 18.9043 23.4743 17.7123 22.2853C16.5203 21.0923 16.1593 19.9313 16.0523 19.3593L18.5113 16.9653C18.6977 16.7844 18.8064 16.5381 18.8144 16.2785C18.8225 16.0189 18.7292 15.7663 18.5543 15.5743L14.8593 11.5113C14.6843 11.3186 14.4412 11.2018 14.1814 11.1855C13.9217 11.1693 13.6659 11.2549 13.4683 11.4243L11.2983 13.2853C11.1254 13.4588 11.0222 13.6897 11.0083 13.9343C10.9933 14.1843 10.7073 20.1063 15.2993 24.7003C19.3053 28.7053 24.3233 28.9983 25.7053 28.9983C25.9073 28.9983 26.0313 28.9923 26.0643 28.9903C26.3088 28.9766 26.5396 28.8729 26.7123 28.6993L28.5723 26.5283C28.7417 26.3308 28.8276 26.0751 28.8115 25.8153C28.7954 25.5556 28.6788 25.3124 28.4863 25.1373L24.4223 21.4413Z" fill="black"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Call Us</h3>
-                    <p class="text-black text-lg underline font-bold">+965 5122 0400</p>
-                </div>
-
-                <!-- Card 2: Email Us -->
-                <div class="bg-white rounded-xl border border-[#0F548E] py-4 px-8 text-left shadow-sm">
-                    <!-- Icon -->
-                    <div class="w-10 h-10 rounded-lg bg-[#F4F7FA] flex items-center justify-center mb-8">
-                        <!-- Email Icon -->
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" y="0.5" width="39" height="39" rx="9.5" fill="#FDFDFE"/>
-                            <rect x="0.5" y="0.5" width="39" height="39" rx="9.5" stroke="#CDCED7"/>
-                            <path d="M26 11H9V23H12V26L16 23H26V11Z" stroke="#1E1F24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M26 11H24V23H26V11Z" fill="#1E1F24"/>
-                            <path d="M14.5 15.5H20.5" stroke="#1E1F24" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M14.5 18.5H20.5" stroke="#1E1F24" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M25.67 14H31V26H28V29L24 26H18" stroke="#1E1F24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Email Us</h3>
-                    <p class="text-black text-lg underline font-bold">info@storat-re.com</p>
-                </div>
-
-                <!-- Card 3: Follow Us -->
-                <div class="bg-white rounded-xl border border-[#0F548E] py-4 px-8 text-left shadow-sm">
-                    <!-- Icon -->
-                    <div class="w-10 h-10 rounded-lg bg-[#F4F7FA] flex items-center justify-center mb-8">
-                        <!-- Chat Icon -->
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" y="0.5" width="39" height="39" rx="9.5" fill="white"/>
-                            <rect x="0.5" y="0.5" width="39" height="39" rx="9.5" stroke="#CDCED7"/>
-                            <path d="M12.017 25.841C12.1727 25.9973 12.292 26.186 12.3664 26.3937C12.4408 26.6014 12.4685 26.8229 12.4475 27.0425C12.3421 28.0589 12.1422 29.0632 11.8505 30.0425C13.943 29.558 15.221 28.997 15.8015 28.703C16.1308 28.5362 16.5099 28.4967 16.8665 28.592C17.8887 28.8645 18.9421 29.0017 20 29C25.994 29 30.5 24.7895 30.5 20C30.5 15.212 25.994 11 20 11C14.006 11 9.5 15.212 9.5 20C9.5 22.202 10.4255 24.245 12.017 25.841ZM11.2775 31.6985C10.9221 31.769 10.5656 31.8335 10.208 31.892C9.908 31.94 9.68 31.628 9.7985 31.349C9.93169 31.0349 10.0538 30.7162 10.1645 30.3935L10.169 30.3785C10.541 29.2985 10.844 28.0565 10.955 26.9C9.1145 25.055 8 22.64 8 20C8 14.201 13.373 9.5 20 9.5C26.627 9.5 32 14.201 32 20C32 25.799 26.627 30.5 20 30.5C18.8115 30.5016 17.6279 30.3473 16.4795 30.041C15.6995 30.4355 14.021 31.154 11.2775 31.6985Z" fill="black"/>
-                            <path d="M18.599 18.1402C18.3068 17.6852 17.8749 17.3373 17.368 17.1488C16.8611 16.9603 16.3068 16.9414 15.7883 17.095C15.2698 17.2486 14.8151 17.5662 14.4927 18.0003C14.1702 18.4344 13.9973 18.9615 14 19.5022C14.0003 19.95 14.1208 20.3895 14.349 20.7748C14.5772 21.1601 14.9046 21.4771 15.2972 21.6926C15.6897 21.9081 16.1329 22.0143 16.5805 21.9999C17.0281 21.9856 17.4636 21.8514 17.8415 21.6112C17.645 22.1947 17.279 22.8172 16.676 23.4412C16.5607 23.5606 16.4974 23.7209 16.5002 23.8868C16.5016 23.969 16.5192 24.0501 16.5519 24.1255C16.5847 24.2009 16.6319 24.2691 16.691 24.3262C16.7501 24.3833 16.8199 24.4283 16.8964 24.4584C16.9728 24.4886 17.0545 24.5034 17.1366 24.502C17.3026 24.4992 17.4607 24.4306 17.576 24.3112C19.805 22.0012 19.5155 19.4902 18.599 18.1432V18.1402ZM24.599 18.1402C24.3068 17.6852 23.8749 17.3373 23.368 17.1488C22.8612 16.9603 22.3068 16.9414 21.7883 17.095C21.2698 17.2486 20.8151 17.5662 20.4927 18.0003C20.1702 18.4344 19.9973 18.9615 20 19.5022C20.0003 19.95 20.1208 20.3895 20.349 20.7748C20.5772 21.1601 20.9046 21.4771 21.2972 21.6926C21.6897 21.9081 22.1329 22.0143 22.5805 21.9999C23.0281 21.9856 23.4636 21.8514 23.8415 21.6112C23.645 22.1947 23.279 22.8172 22.676 23.4412C22.6189 23.5003 22.574 23.5701 22.5438 23.6465C22.5137 23.723 22.4988 23.8046 22.5002 23.8868C22.5016 23.969 22.5192 24.0501 22.5519 24.1255C22.5847 24.2009 22.6319 24.2691 22.691 24.3262C22.7501 24.3833 22.8199 24.4283 22.8964 24.4584C22.9728 24.4886 23.0545 24.5034 23.1366 24.502C23.2188 24.5006 23.2999 24.483 23.3753 24.4503C23.4507 24.4176 23.5189 24.3703 23.576 24.3112C25.805 22.0012 25.5155 19.4902 24.599 18.1432V18.1402Z" fill="black"/>
-                        </svg>
-
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Follow Us</h3>
-                    <div class="flex items-center gap-4">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_456_27073)">
-                                <path d="M20.5 4H11.5C7.3585 4 4 7.3585 4 11.5V20.5C4 24.6415 7.3585 28 11.5 28H20.5C24.6415 28 28 24.6415 28 20.5V11.5C28 7.3585 24.6415 4 20.5 4ZM25.75 20.5C25.75 23.395 23.395 25.75 20.5 25.75H11.5C8.605 25.75 6.25 23.395 6.25 20.5V11.5C6.25 8.605 8.605 6.25 11.5 6.25H20.5C23.395 6.25 25.75 8.605 25.75 11.5V20.5Z" fill="black"/>
-                                <path d="M16 10C12.6865 10 10 12.6865 10 16C10 19.3135 12.6865 22 16 22C19.3135 22 22 19.3135 22 16C22 12.6865 19.3135 10 16 10ZM16 19.75C13.933 19.75 12.25 18.067 12.25 16C12.25 13.9315 13.933 12.25 16 12.25C18.067 12.25 19.75 13.9315 19.75 16C19.75 18.067 18.067 19.75 16 19.75Z" fill="black"/>
-                                <path d="M22.4499 10.349C22.8914 10.349 23.2494 9.99105 23.2494 9.5495C23.2494 9.10795 22.8914 8.75 22.4499 8.75C22.0083 8.75 21.6504 9.10795 21.6504 9.5495C21.6504 9.99105 22.0083 10.349 22.4499 10.349Z" fill="black"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_456_27073">
-                                    <rect width="24" height="24" fill="white" transform="translate(4 4)"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-
+            <div class="bg-white border border-blue-200 rounded-lg shadow-sm grid grid-cols-1 md:grid-cols-3 items-center text-center py-4 px-6 mb-8 sm:max-w-3xl md:max-w-5xl mx-auto gap-6">
+                <a href="tel:+96551220400"
+                   class="flex items-center space-x-2 text-[#0F548E] font-semibold hover:underline">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.83332 4.66654C10.5858 4.66654 11.3333 5.41404 11.3333 7.16654H13C13 4.47904 11.5208 2.99987 8.83332 2.99987V4.66654ZM11.685 9.20237C11.5249 9.05683 11.3144 8.97921 11.0982 8.9859C10.8819 8.99259 10.6767 9.08305 10.5258 9.23821L8.53166 11.289C8.05166 11.1974 7.08666 10.8965 6.09332 9.90571C5.09999 8.91154 4.79916 7.94404 4.70999 7.46737L6.75916 5.47237C6.9145 5.32165 7.0051 5.11639 7.01179 4.90005C7.01848 4.6837 6.94073 4.47324 6.79499 4.31321L3.71582 0.927374C3.57003 0.766838 3.36739 0.66946 3.15095 0.655923C2.93451 0.642386 2.72132 0.713756 2.55666 0.854874L0.748324 2.40571C0.60425 2.5503 0.518257 2.74275 0.506657 2.94654C0.494157 3.15487 0.255824 8.08987 4.08249 11.9182C7.42082 15.2557 11.6025 15.4999 12.7542 15.4999C12.9225 15.4999 13.0258 15.4949 13.0533 15.4932C13.2571 15.4818 13.4494 15.3954 13.5933 15.2507L15.1433 13.4415C15.2845 13.277 15.3561 13.0639 15.3427 12.8474C15.3293 12.631 15.2321 12.4283 15.0717 12.2824L11.685 9.20237Z" fill="#0F548E"/>
+                    </svg>
+                    <span>+965 5122 0400</span>
+                </a>
+                <a href="mailto:info@storat-re.com"
+                   class="flex items-center justify-center space-x-2 text-[#0F548E] font-semibold hover:underline">
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.25 4.375H3.625V11.875H5.5V13.75L8 11.875H14.25V4.375Z" stroke="#0F548E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.25 4.375H13V11.875H14.25V4.375Z" fill="#0F548E"/>
+                        <path d="M7.0625 7.1875H10.8125" stroke="#0F548E" stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.0625 9.0625H10.8125" stroke="#0F548E" stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.0438 6.25H17.375V13.75H15.5V15.625L13 13.75H9.25" stroke="#0F548E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>info@storat-re.com</span>
+                </a>
+                <div class="flex justify-center md:justify-end space-x-4 text-[#0F548E]">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.5 0H7.5C3.3585 0 0 3.3585 0 7.5V16.5C0 20.6415 3.3585 24 7.5 24H16.5C20.6415 24 24 20.6415 24 16.5V7.5C24 3.3585 20.6415 0 16.5 0ZM21.75 16.5C21.75 19.395 19.395 21.75 16.5 21.75H7.5C4.605 21.75 2.25 19.395 2.25 16.5V7.5C2.25 4.605 4.605 2.25 7.5 2.25H16.5C19.395 2.25 21.75 4.605 21.75 7.5V16.5Z" fill="#0F548E"/>
+                        <path d="M12 6C8.6865 6 6 8.6865 6 12C6 15.3135 8.6865 18 12 18C15.3135 18 18 15.3135 18 12C18 8.6865 15.3135 6 12 6ZM12 15.75C9.933 15.75 8.25 14.067 8.25 12C8.25 9.9315 9.933 8.25 12 8.25C14.067 8.25 15.75 9.9315 15.75 12C15.75 14.067 14.067 15.75 12 15.75Z" fill="#0F548E"/>
+                        <path d="M18.4504 6.34949C18.8919 6.34949 19.2499 5.99154 19.2499 5.54999C19.2499 5.10844 18.8919 4.75049 18.4504 4.75049C18.0088 4.75049 17.6509 5.10844 17.6509 5.54999C17.6509 5.99154 18.0088 6.34949 18.4504 6.34949Z" fill="#0F548E"/>
+                    </svg>
+                    <a href="#" class="hover:text-blue-900">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.5 8.25V5.25C13.5 4.422 14.172 3.75 15 3.75H16.5V0H13.5C11.0145 0 9 2.0145 9 4.5V8.25H6V12H9V24H13.5V12H16.5L18 8.25H13.5Z" fill="black"/>
+                            <path d="M13.5 8.25V5.25C13.5 4.422 14.172 3.75 15 3.75H16.5V0H13.5C11.0145 0 9 2.0145 9 4.5V8.25H6V12H9V24H13.5V12H16.5L18 8.25H13.5Z" fill="#0F548E"/>
                         </svg>
-
-                    </div>
+                    </a>
                 </div>
-
             </div>
-
-        </div>
-
-        <!-- Get a Quote -->
-        <div class="mx-auto px-4 md:px-20 mt-10">
-            <!-- Outer card -->
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 md:p-8 lg:p-10">
-                <div class="grid lg:grid-cols-2 gap-10 items-center">
-
-                    <!-- Left: Form card -->
+            <div class="bg-white border rounded-xl shadow p-6 mx-auto sm:max-w-3xl md:max-w-5xl">
+                <form action="#" class="space-y-4">
                     <div>
-                        <form class="rounded-xl border border-gray-300 p-5 md:p-6 lg:p-8">
-                            <!-- Full Name -->
-                            <label for="full-name" class="block text-sm font-semibold text-gray-800">Full Name</label>
-                            <input id="full-name" type="text" placeholder="Enter name"
-                                   class="mt-2 w-full rounded-lg border border-gray-300 h-11 px-4 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0F548E]/30 focus:border-[#0F548E]" />
-
-                            <!-- Email -->
-                            <label for="email" class="block text-sm font-semibold text-gray-800 mt-5">Email</label>
-                            <input id="email" type="email" placeholder="Enter mail"
-                                   class="mt-2 w-full rounded-lg border border-gray-300 h-11 px-4 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0F548E]/30 focus:border-[#0F548E]" />
-
-                            <!-- Select -->
-                            <label for="service" class="block text-sm font-semibold text-gray-800 mt-5">Real Estate Development</label>
-                            <div class="relative mt-2">
-                                <select id="service"
-                                        class="w-full appearance-none rounded-lg border border-gray-300 h-11 pl-4 pr-10 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#0F548E]/30 focus:border-[#0F548E]">
-                                    <option>real estate</option>
-                                    <option>leasing</option>
-                                    <option>property valuation</option>
-                                    <option>consultancy</option>
-                                </select>
-                                <!-- Chevron -->
-                                <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500"
-                                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                          d="M10 12a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L10 9.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4A1 1 0 0 1 10 12z"
-                                          clip-rule="evenodd" />
-                                </svg>
-                            </div>
-
-                            <!-- Button -->
-                            <button type="submit"
-                                    class="mt-6 w-full h-11 rounded-lg bg-[#0F548E] text-white font-semibold inline-flex items-center justify-center hover:bg-[#0c446f] transition">
-                                Get A Quote
-                                <svg class="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </button>
-                        </form>
+                        <label class="block text-sm font-semibold text-left">Full Name</label>
+                        <input type="text" placeholder="Enter name" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                     </div>
-
-                    <!-- Right: Illustration -->
-                    <div class="flex justify-center lg:justify-end">
-                        <img src="images/img_23.png" alt="Support agent"
-                             class="w-full md:w-[450px] h-auto object-contain" />
+                    <div>
+                        <label class="block text-sm font-semibold text-left">Email</label>
+                        <input type="email" placeholder="Enter mail" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                     </div>
-
-                </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-left">Real Estate Development</label>
+                        <select class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
+                            <option>real estate</option>
+                            <option>commercial</option>
+                            <option>residential</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-[#0F548E] text-white font-semibold p-3 gap-3 rounded-lg hover:bg-blue-900 flex justify-center items-center">
+                        Get A Quote
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.4302 5.93018L20.5002 12.0002L14.4302 18.0702" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.5 12H20.33" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </form>
             </div>
         </div>
-
     </section>
 
 @endsection
