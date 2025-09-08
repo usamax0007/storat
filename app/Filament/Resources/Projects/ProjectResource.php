@@ -42,6 +42,7 @@ class ProjectResource extends Resource
                     ->label('Image')
                     ->directory('project')
                     ->image()
+                    ->disk('public')
                     ->imageEditor()
                     ->required(),
             ]);

@@ -189,139 +189,83 @@
         </div>
     </section>
     <!-- Vision Section -->
-    <section class="bg-white py-12 md:py-20">
-        <div class="mx-auto px-4 lg:px-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center" id="vision-slider">
+    <section class="relative w-full h-[600px] md:h-[700px] bg-gray-900 overflow-hidden" id="vision-slider">
 
-                <!-- Left: Image (fixed size) -->
-                <div class="relative">
-                    <div class="w-full h-[520px] md:h-[640px] lg:h-[760px] rounded-2xl shadow overflow-hidden flex items-center justify-center bg-white">
-                        <img
-                            id="vision-img"
-                            src="images/img_9.png"
-                            alt="Slide image"
-                            class="w-full w-full h-[520px] md:h-[640px] lg:h-[760px]  rounded-2xl"
-                        />
+        @foreach($visions as $index => $vision)
+            <!-- Slide -->
+            <div class="absolute inset-0 transition-opacity duration-700
+                    @if($index === 0) opacity-100 @else opacity-0 @endif"
+                 data-slide="{{ $index }}">
+
+                <!-- Background Image -->
+                <img src="{{ asset('storage/'.$vision->image) }}"
+                     alt="{{ $vision->title_en }}"
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50"></div>
+
+                <!-- Content -->
+                <div class="absolute top-0 right-[306px] flex flex-col items-center justify-center text-center h-full px-6">
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                        {{ $vision->title_en }}
+                    </h2>
+                    <div class="max-w-4xl text-white text-base md:text-lg leading-relaxed space-y-4">
+                        {!! nl2br(e($vision->description_en)) !!}
                     </div>
                 </div>
-
-
-                <!-- Right: Card -->
-                <div class="relative">
-                    <div
-                        class="bg-white rounded-2xl shadow-xl ring-1 ring-black/5
-                 p-6 sm:p-8 md:p-10 lg:p-12
-                 lg:-ml-24 lg:-mt-8"
-                    >
-                        <h2 id="vision-title" class="text-4xl md:text-6xl font-bold text-black mb-5">
-                            Our Vision
-                        </h2>
-
-                        <div class="space-y-4 text-gray-600 leading-relaxed md:text-[15px]">
-                            <p id="vision-p1">
-                                Forecast and trends are uniform and projecting exponential growth in companies and
-                                individual choosing to work more virtually yet professionally…
-                            </p>
-                            <p id="vision-p2">
-                                STORAT Real Estate Consultancy Co. is a professional Real Estate office provides you the
-                                best services but it’s all Fraction on the tradition cost…
-                            </p>
-                        </div>
-
-                        <!-- Controls -->
-                        <div class="mt-8 flex items-center gap-4 justify-end">
-                            <button id="vision-prev"
-                                    class="w-12 h-12 rounded-[12px] bg-gray-300/70 hover:bg-gray-300 transition inline-flex items-center justify-center"
-                                    aria-label="Previous slide">
-                                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-                                </svg>
-                            </button>
-                            <button id="vision-next"
-                                    class="w-12 h-12 rounded-[12px] bg-[#0F548E] hover:bg-[#0c446f] transition inline-flex items-center justify-center"
-                                    aria-label="Next slide">
-                                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+        @endforeach
+
+        <!-- Controls -->
+        <div class="absolute inset-0 flex items-center justify-between px-6 z-20">
+            <button id="vision-prev"
+                    class=""
+                    aria-label="Previous slide">
+                <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M38.174 0.332031H15.8273C6.12065 0.332031 0.333984 6.1187 0.333984 15.8254V38.1454C0.333984 47.8787 6.12065 53.6654 15.8273 53.6654H38.1473C47.854 53.6654 53.6407 47.8787 53.6407 38.172V15.8254C53.6673 6.1187 47.8807 0.332031 38.174 0.332031ZM43.0007 28.9987H15.8273L23.854 37.0254C24.6273 37.7987 24.6273 39.0787 23.854 39.852C23.454 40.252 22.9473 40.4387 22.4407 40.4387C21.934 40.4387 21.4273 40.252 21.0273 39.852L9.58732 28.412C9.21398 28.0387 9.00065 27.532 9.00065 26.9987C9.00065 26.4654 9.21398 25.9587 9.58732 25.5854L21.0273 14.1454C21.8007 13.372 23.0807 13.372 23.854 14.1454C24.6273 14.9187 24.6273 16.1987 23.854 16.972L15.8273 24.9987H43.0007C44.094 24.9987 45.0007 25.9054 45.0007 26.9987C45.0007 28.092 44.094 28.9987 43.0007 28.9987Z" fill="#CCCFD3"/>
+                </svg>
+
+            </button>
+            <button id="vision-next"
+                    class=""
+                    aria-label="Next slide">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M43.174 5.33203H20.8273C11.1207 5.33203 5.33398 11.1187 5.33398 20.8254V43.1454C5.33398 52.8787 11.1207 58.6654 20.8273 58.6654H43.1473C52.854 58.6654 58.6407 52.8787 58.6407 43.172V20.8254C58.6673 11.1187 52.8807 5.33203 43.174 5.33203ZM49.414 33.412L37.974 44.852C37.574 45.252 37.0673 45.4387 36.5607 45.4387C36.054 45.4387 35.5473 45.252 35.1473 44.852C34.374 44.0787 34.374 42.7987 35.1473 42.0254L43.174 33.9987H16.0007C14.9073 33.9987 14.0007 33.092 14.0007 31.9987C14.0007 30.9054 14.9073 29.9987 16.0007 29.9987H43.174L35.1473 21.972C34.374 21.1987 34.374 19.9187 35.1473 19.1454C35.9207 18.372 37.2007 18.372 37.974 19.1454L49.414 30.5854C49.7873 30.9587 50.0007 31.4654 50.0007 31.9987C50.0007 32.532 49.7873 33.0387 49.414 33.412Z" fill="#0F548E"/>
+                </svg>
+            </button>
         </div>
+
     </section>
+
     <!-- Latest Projects -->
     <section class="bg-[#e9f3fa] py-16 md:py-20">
         <div class="mx-auto">
             <h2 class="text-4xl md:text-6xl lg:text-6xl font-bold text-center text-black tracking-tight">
                 Latest Projects
             </h2>
-            <div class="mt-10 md:mt-12  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
-                <!-- Card 1 -->
-                <a href="#" class="group block">
-                    <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
-                        <img src="images/img_10.png" alt="Project 1"
-                             class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
-                    </div>
-                </a>
-
-                <!-- Card 2 -->
-                <a href="#" class="group block">
-                    <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
-                        <img src="images/img_11.png" alt="Project 2"
-                             class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
-                    </div>
-                </a>
-
-                <!-- Card 3 -->
-                <a href="#" class="group block">
-                    <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
-                        <img src="images/img_12.png" alt="Project 3"
-                             class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
-                    </div>
-                </a>
-                <!-- Card 1 -->
-                <a href="#" class="group block">
-                    <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
-                        <img src="images/img_13.png" alt="Project 1"
-                             class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
-                    </div>
-                </a>
-
-                <!-- Card 2 -->
-                <a href="#" class="group block">
-                    <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
-                        <img src="images/img_14.png" alt="Project 2"
-                             class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
-                    </div>
-                </a>
-
-                <!-- Card 3 -->
-                <a href="#" class="group block">
-                    <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
-                        <img src="images/img_15.png" alt="Project 3"
-                             class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
-                    </div>
-                </a>
-                <!-- Card 1 -->
-                <a href="#" class="group block">
-                    <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
-                        <img src="images/img_16.png" alt="Project 1"
-                             class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
-                    </div>
-                </a>
-
-                <!-- Card 2 -->
-                <a href="#" class="group block">
-                    <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
-                        <img src="images/img_17.png" alt="Project 2"
-                             class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
-                    </div>
-                </a>
+            <div class="relative mt-10 md:mt-12 overflow-hidden">
+                <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+                    @foreach($projects as $project)
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.3333%] p-2">
+                            <a href="#" class="group block">
+                                <div class="rounded-2xl overflow-hidden shadow-sm bg-white">
+                                    <img src="{{ asset('storage/' .$project->image) }}" alt="Project"
+                                         class="h-[340px] md:h-[450px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="flex justify-center mt-6 space-x-2">
+                    @foreach($projects as $index => $project)
+                        <button class="dot w-3 h-3 rounded-full bg-gray-400" data-index="{{ $index }}"></button>
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>
+
+
+
     <!-- Our Impact -->
     <section class="bg-white py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 md:px-20">
@@ -445,4 +389,66 @@
         </div>
     </section>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll("#vision-slider [data-slide]");
+            const prevBtn = document.getElementById("vision-prev");
+            const nextBtn = document.getElementById("vision-next");
+
+            let current = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.opacity = (i === index) ? "1" : "0";
+                    slide.style.zIndex = (i === index) ? "10" : "0";
+                });
+            }
+
+            prevBtn.addEventListener("click", () => {
+                current = (current - 1 + slides.length) % slides.length;
+                showSlide(current);
+            });
+
+            nextBtn.addEventListener("click", () => {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            });
+
+
+            setInterval(() => {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }, 6000);
+        });
+    </script>
+
+
+    <script>
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        const totalSlides = dots.length;
+
+        function updateSlider(index) {
+            let perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+            slider.style.transform = `translateX(-${index * (100 / perView)}%)`;
+
+            dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+            dots[index].classList.add('bg-blue-500');
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.dataset.index);
+                updateSlider(currentIndex);
+            });
+        });
+
+        updateSlider(currentIndex);
+
+        window.addEventListener('resize', () => updateSlider(currentIndex));
+    </script>
 @endsection
+
+

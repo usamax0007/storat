@@ -2,7 +2,7 @@
 @section('content')
     <section class="bg-[#B7D6EF]">
         <div class="mx-auto">
-            <div class="relative bg-[url('{{asset('assets/'. $service->image)}}')] bg-cover bg-center h-[320px] md:h-[460px] lg:h-[560px] xl:h-[640px]">
+            <div class="relative bg-[url('{{asset('storage/'. $service->image)}}')] bg-cover bg-center h-[320px] md:h-[460px] lg:h-[560px] xl:h-[640px]">
                 <div class="absolute inset-0 bg-black/45"></div>
                 <div class="relative h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 text-center items-center">
                     <h1 class="text-white font-bold leading-tight text-3xl sm:text-4xl md:text-6xl">

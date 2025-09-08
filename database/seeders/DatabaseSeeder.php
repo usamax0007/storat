@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             HeroSectionSeeder::class,
             ServicesSeeder::class,
             AboutUsSeeder::class,
+            VisionSeeder::class,
+            ProjectSeeder::class,
         ]);
     }
 }

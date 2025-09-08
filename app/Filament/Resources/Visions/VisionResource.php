@@ -45,7 +45,9 @@ class VisionResource extends Resource
                 TextInput::make('description_ar')
                     ->label('Service Description Arabic')
                     ->required(),
-                FileUpload::make('image')->label('image')->image(),
+                FileUpload::make('image')->label('image')->image()->disk('public')
+                    ->directory('vision')
+                ,
             ]);
     }
 
