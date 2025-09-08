@@ -161,14 +161,14 @@
             <h2 class="text-3xl md:text-6xl font-bold text-center text-black mb-28">
                 Our Services
             </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-28">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
                 @foreach($services as $service)
                     <div class="bg-white rounded-xl shadow p-6">
                         <!-- Icon -->
-                        <div class="w-[120px] h-[120px] rounded-lg bg-blue-50 flex items-center justify-center">
+                        <div class="w-[120px] h-[120px] rounded-lg bg-blue-50 flex items-center justify-center p-6">
                             <img src="{{ asset('storage/'.$service->icon) }}"
                                  alt="{{ $service->title_en }}"
-                                 class="w-8 h-8">
+                                 class="w-[50%] h-[50%]">
                         </div>
 
                         <!-- Title -->
