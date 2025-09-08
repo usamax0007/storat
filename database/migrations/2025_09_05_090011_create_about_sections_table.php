@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('subtitle_ar');
             $table->text('description_en');
             $table->text('description_ar');
-            $table->string('image')->nullable();
+            $table->string('image_main')->nullable();
+            $table->string('image_inner')->nullable();
             $table->timestamps();
         });
     }

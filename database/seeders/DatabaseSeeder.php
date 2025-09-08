@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             HeroSectionSeeder::class,
             ServicesSeeder::class,
+            AboutUsSeeder::class,
         ]);
     }
 }
