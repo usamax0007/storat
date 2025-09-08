@@ -163,22 +163,27 @@
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-28">
                 @foreach($services as $service)
-                    <div class="relative bg-white rounded-xl shadow-md pt-28 pb-10 px-8 text-center">
-                        <div class="absolute -top-20 left-1/2 -translate-x-1/2">
-                            <div class="w-36 h-36 rounded-full bg-[#0F548E] grid place-items-center shadow-md">
-                                <img src="{{ asset('assets/'.$service->image) }}" alt="{{ $service->title_en }}" class="w-24 h-24">
-                            </div>
+                    <div class="bg-white rounded-xl shadow p-6">
+                        <!-- Icon -->
+                        <div class="w-[120px] h-[120px] rounded-lg bg-blue-50 flex items-center justify-center">
+                            <img src="{{ asset('storage/'.$service->icon) }}"
+                                 alt="{{ $service->title_en }}"
+                                 class="w-8 h-8">
                         </div>
-                        <h3 class="text-3xl font-bold text-black leading-tight mt-6">
-                            <a href="{{ route('service.show', $service->id) }}">
-                                {{$service->title_en}}
-                            </a>
 
+                        <!-- Title -->
+                        <h3 class="mt-4 text-[32px] font-bold text-black">
+                            <a href="{{ route('service.show', $service->id) }}">
+                                {{ $service->title_en }}
+                            </a>
                         </h3>
-                        <p class="mt-5 text-[22px] text-gray-600 leading-[1.4]">
-                            {{$service->sub_title_en}}
+
+                        <!-- Subtitle -->
+                        <p class="mt-2 text-[#7B7A7A] text-[20px] leading-relaxed">
+                            {{ $service->sub_title_en }}
                         </p>
                     </div>
+
                 @endforeach
             </div>
         </div>

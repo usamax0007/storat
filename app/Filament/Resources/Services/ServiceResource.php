@@ -66,7 +66,15 @@ class ServiceResource extends Resource
                     ->label('Icon')
                     ->image()
                     ->imagePreviewHeight('100')
-                    ->directory('service-icons')
+                    ->disk('public')
+                    ->directory('services')
+                    ->nullable(),
+
+                FileUpload::make('image')
+                    ->label('image')
+                    ->image()
+                    ->disk('public')
+                    ->directory('services')
                     ->nullable(),
             ]);
     }
