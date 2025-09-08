@@ -62,6 +62,7 @@ class HeroSectionResource extends Resource
                     ->label('Background Image')
                     ->directory('hero-sections')
                     ->image()
+                    ->disk('public')
                     ->imageEditor()
                     ->required(),
 
@@ -96,8 +97,9 @@ class HeroSectionResource extends Resource
 
                 FileUpload::make('rent_icon')
                     ->label('Rent Icon')
-                    ->directory('hero-sections/icons')
+                    ->directory('hero-sections')
                     ->image()
+                    ->disk('public')
                     ->imageEditor(),
 
                 // Properties Section
@@ -119,8 +121,9 @@ class HeroSectionResource extends Resource
 
                 FileUpload::make('properties_icon')
                     ->label('Properties Icon')
-                    ->directory('hero-sections/icons')
+                    ->directory('hero-sections')
                     ->image()
+                    ->disk('public')
                     ->imageEditor(),
 
                 Toggle::make('is_active')

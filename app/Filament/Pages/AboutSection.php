@@ -36,7 +36,8 @@ class AboutSection extends Page implements HasForms
     public $subtitle_ar = null;
     public $description_en = null;
     public $description_ar = null;
-    public $image = null;
+    public $image_main = null;
+    public $image_inner = null;
 
     public function mount(): void
     {
@@ -49,7 +50,8 @@ class AboutSection extends Page implements HasForms
                 'subtitle_ar'    => $about->subtitle_ar,
                 'description_en' => $about->description_en,
                 'description_ar' => $about->description_ar,
-                'image'          => $about->image,
+                'image_main'          => $about->image_main,
+                'image_inner'          => $about->image_inner,
             ]);
         }
     }
@@ -67,11 +69,20 @@ class AboutSection extends Page implements HasForms
                     Textarea::make('description_en')->label('Description (EN)')->required(),
                     Textarea::make('description_ar')->label('Description (AR)')->required(),
 
-                    FileUpload::make('image')
-                        ->label('Image')
+                    FileUpload::make('image_main')
+                        ->label('Main Image')
                         ->image()
                         ->directory('about-us-images')
                         ->maxSize(2048)
+                        ->disk('public')
+                        ->nullable(),
+
+                    FileUpload::make('image_inner')
+                        ->label('Image Inner')
+                        ->image()
+                        ->directory('about-us-images')
+                        ->maxSize(2048)
+                        ->disk('public')
                         ->nullable(),
                 ])
                 ->columns(2)

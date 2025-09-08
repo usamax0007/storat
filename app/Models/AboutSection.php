@@ -13,7 +13,8 @@ class AboutSection extends Model
         'subtitle_ar',
         'description_en',
         'description_ar',
-        'image',
+        'image_main',
+        'image_inner',
     ];
 
 }

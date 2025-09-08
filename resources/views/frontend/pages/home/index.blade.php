@@ -9,7 +9,7 @@
                     <div class="hero-slides flex transition-transform duration-1000 h-full">
                         @foreach($heroSections as $index => $heroSection)
                             <div class="hero-slide w-full flex-shrink-0 bg-cover h-full"
-                                 style="background-image: url('{{ asset('assets/'.$heroSection->image) }}');">
+                                 style="background-image: url('{{ asset('storage/'.$heroSection->image) }}');">
 
                                 <!-- Text Overlay -->
                                 <div class="relative h-full flex items-center pt-16 md:pt-24">
@@ -40,7 +40,7 @@
                                     <!-- Renters -->
                                     <div class="flex flex-col items-start gap-2 sm:gap-3">
                                         <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
-                                            <img src="{{ asset('assets/' .$heroSections->rent_icon) }}" alt="">
+                                            <img src="{{ asset('storage/' .$heroSections->rent_icon) }}" alt="">
                                         </div>
                                         <div>
                                             <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->rent_heading_en}}</p>
@@ -51,7 +51,7 @@
                                     <!-- Properties -->
                                     <div class="flex flex-col items-start gap-2 sm:gap-3">
                                         <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
-                                            <img src="{{ asset('assets/' .$heroSections->properties_icon) }}" alt="">
+                                            <img src="{{ asset('storage/' .$heroSections->properties_icon) }}" alt="">
                                         </div>
                                         <div>
                                             <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->properties_heading_en}}</p>
@@ -65,7 +65,7 @@
                     </div>
                 @else
                     <div class="relative h-full flex items-center pt-16 md:pt-24 h-full bg-cover"
-                         style="background-image: url('{{ asset('assets/'.$heroSections->first()->image) }}');">
+                         style="background-image: url('{{ asset('storage/'.$heroSections->first()->image) }}');">
                         <div class="px-4 sm:px-8 md:px-16 text-white max-w-lg">
                             <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{$heroSections->first()->title_en}}</p>
                             <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold leading-tight md:leading-[1.15]">
@@ -91,7 +91,7 @@
                             <!-- Renters -->
                             <div class="flex flex-col items-start gap-2 sm:gap-3">
                                 <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
-                                    <img src="{{ asset('assets/' .$heroSections->first()->rent_icon) }}" alt="">
+                                    <img src="{{ asset('storage/' .$heroSections->first()->rent_icon) }}" alt="">
                                 </div>
                                 <div>
                                     <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->first()->rent_heading_en}}</p>
@@ -102,7 +102,7 @@
                             <!-- Properties -->
                             <div class="flex flex-col items-start gap-2 sm:gap-3">
                                 <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
-                                    <img src="{{ asset('assets/' .$heroSections->first()->properties_icon) }}" alt="">
+                                    <img src="{{ asset('storage/' .$heroSections->first()->properties_icon) }}" alt="">
                                 </div>
                                 <div>
                                     <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->first()->properties_heading_en}}</p>
@@ -123,17 +123,16 @@
         <div class="max-w-full mx-auto px-4 lg:px-12">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left Images -->
-                <div class="relative">
+                <div class="relative pr-10">
                     <!-- Main big image -->
-                    <div class="rounded-xl w-[470px] overflow-hidden shadow-md">
-                        <img src="{{ asset('assets/images/img_27.png') }}"
-                             alt="House"
-                             class="w-[470px] h-[420px] md:h-[520px] object-cover">
-                    </div>
+                    <img src="{{ asset('storage/' . $about->image_main) }}"
+                         alt="House"
+                         class="w-[470px] h-[420px] md:h-[520px] object-cover">
+
 
                     <!-- Small overlapping image -->
-                    <div class="absolute bottom-[-100px] left-[180px] md:left-[316px] w-[220px] md:w-[260px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
-                        <img src="{{ asset('assets/images/img_28.png') }}"
+                    <div class="absolute bottom-[-100px] left-[180px] md:left-[384px] w-[220px] md:w-[260px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
+                        <img src="{{ asset('storage/' . $about->image_inner) }}"
                              alt="Modern building"
                              class="w-full h-[200px] md:h-[240px] object-cover">
                     </div>
@@ -142,40 +141,14 @@
                 <!-- Right Content -->
                 <div class="space-y-5 mt-12 md:mt-0">
                     <h2 class="text-4xl md:text-5xl font-extrabold text-black tracking-tight">
-                        STORAT
+                        {{ $about->title_en }}
                     </h2>
                     <p class="text-xl md:text-2xl font-semibold text-gray-900">
-                        Real Estate Consultancy Co.
+                        {{ $about->subtitle_en }}
                     </p>
                     <div class="space-y-4 text-[14px] md:text-[16px] leading-relaxed text-[#62636C]">
-                        <p>
-                            Put your Real Estate needs in our hands and lets be your Property Department,
-                            nowadays having your Property Department becoming an old school, the growth of
-                            telecommuting Laptops, Smartphone and other movers means testimony to the idea
-                            that more and more people are leaving the tradition offices behind, currently
-                            work is something you do, and no longer a location.
-                        </p>
-                        <p>
-                            Forecast and trends are uniform and projecting exponential growth in companies and
-                            individual choosing to work more virtually yet professionally, they call it the work
-                            life balance, and STORAT Real Estate Consultancy Co. leading the Real Estate
-                            Consultancy with economic shift by choices available nowhere else.
-                        </p>
-                        <p>
-                            STORAT Real Estate Consultancy Co. is a professional Real Estate office provides you
-                            the best services but it’s all fraction on the tradition cost, all the services are
-                            customized to the client by the client, and according to their budget, there is no
-                            one size fits all.
-                        </p>
-                        <p>
-                            Our services and application are across every element at commercial Real Estate
-                            industry whether its Large corporates, professional, small business, office personal,
-                            Retail in all segments, it works better and it cost less it’s really that simple.
-                        </p>
-                        <p>
-                            Your timing is good too, knowledge is power, and knowledge is stronger with high
-                            credibility to deliver it to you.
-                        </p>
+                        <p>{!! nl2br(e($about->description_en)) !!}</p>
+
                     </div>
                 </div>
             </div>
