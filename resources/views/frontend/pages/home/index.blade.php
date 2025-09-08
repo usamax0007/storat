@@ -264,46 +264,6 @@
         </div>
     </section>
 
-
-
-    <!-- Our Impact -->
-    <section class="bg-white py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 md:px-20">
-            <div class="grid items-center gap-10 lg:gap-14 lg:grid-cols-2">
-
-                <!-- Left: Copy -->
-                <div>
-                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-black">
-                        Our Impact
-                    </h2>
-                    <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-[#62636C] max-w-xl">
-                        Trust STORAT Real Estate Consultancy Co. to handle your property needs. In a world shifting
-                        towards virtual work, we lead with unique choices, aligning with the trend of remote
-                        professionalism. Experience the impact of innovation in real estate with us.
-                    </p>
-                </div>
-
-                <!-- Right: Image with decorative shapes -->
-                <div class="relative">
-                    <!-- Yellow top-left tab -->
-                    <div class="hidden lg:block absolute -top-4 -left-4 w-36 h-36 rounded-xl bg-[#F0D000]"></div>
-                    <div class="hidden lg:block absolute -bottom-4 -right-4 w-52 h-52 rounded-2xl bg-[#0F548E]"></div>
-
-                    <!-- Image card -->
-                    <div class="relative rounded-3xl overflow-hidden shadow-md">
-                        <img
-                            src="images/img_18.png"
-                            alt="Impact"
-                            class="w-full h-[300px] md:h-[500px] object-cover"
-                        />
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- Our Partners -->
-
     <section class="bg-white py-16" id="clients">
         <div class="mx-auto px-6">
             <h2 class="text-2xl md:text-[56px] font-bold text-center pb-20">Our Partners</h2>

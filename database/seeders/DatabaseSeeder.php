@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             AboutUsSeeder::class,
             VisionSeeder::class,
             ProjectSeeder::class,
+            PartnersSeeder::class,
         ]);
     }
 }
