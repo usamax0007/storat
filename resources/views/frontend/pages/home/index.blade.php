@@ -411,30 +411,27 @@
                     </a>
                 </div>
             </div>
+
             <div class="bg-white border rounded-xl shadow p-6 mx-auto sm:max-w-3xl md:max-w-5xl">
-                <form action="#" class="space-y-4">
+                <form id="contactForm" class="space-y-4">
                     <div>
                         <label class="block text-sm font-semibold text-left">Full Name</label>
-                        <input type="text" placeholder="Enter name" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
+                        <input type="text" name="name" placeholder="Enter name" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-left">Email</label>
-                        <input type="email" placeholder="Enter mail" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
+                        <input type="email" name="email" placeholder="Enter mail" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-left">Real Estate Development</label>
-                        <select class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
-                            <option>real estate</option>
-                            <option>commercial</option>
-                            <option>residential</option>
+                        <select name="development_type" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
+                            <option value="real estate">real estate</option>
+                            <option value="commercial">commercial</option>
+                            <option value="residential">residential</option>
                         </select>
                     </div>
                     <button type="submit" class="w-full bg-[#0F548E] text-white font-semibold p-3 gap-3 rounded-lg hover:bg-blue-900 flex justify-center items-center">
                         Get A Quote
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.4302 5.93018L20.5002 12.0002L14.4302 18.0702" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M3.5 12H20.33" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
                     </button>
                 </form>
             </div>
