@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <style>
@@ -164,5 +165,21 @@
                 });
             });
         </script>
+
+        <script>
+            new Swiper(".clients-swiper", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 20,
+                speed: 3000,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+                freeMode: true,
+                freeModeMomentum: false
+            });
+        </script>
+
     </body>
 </html>

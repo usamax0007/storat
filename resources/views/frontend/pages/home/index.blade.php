@@ -359,27 +359,28 @@
         </div>
     </section>
     <!-- Our Partners -->
-    <section class="bg-white py-16">
-        <div class="text-center">
 
-            <!-- Heading -->
-            <h2 class="text-4xl md:text-6xl font-bold text-black mb-12">
-                Our Partners
-            </h2>
-
-            <!-- Logos -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-16 place-items-center">
-                <img src="images/img_19.png" alt="Partner 1" class="h-20 md:h-24 object-contain">
-                <img src="images/img_20.png" alt="Partner 2" class="h-20 md:h-24 object-contain">
-                <img src="images/img_21.png" alt="Partner 3" class="h-20 md:h-24 object-contain">
-                <img src="images/img_22.png" alt="Partner 4" class="h-20 md:h-24 object-contain">
-                <img src="images/img_19.png" alt="Partner 5" class="h-20 md:h-24 object-contain">
+    <section class="bg-white py-16" id="clients">
+        <div class="mx-auto px-6">
+            <h2 class="text-2xl md:text-[56px] font-bold text-center pb-20">Our Partners</h2>
+            <div class="swiper clients-swiper flex">
+                <div class="swiper-wrapper items-center flex">
+                    @foreach($partners as $partner)
+                        <div class="swiper-slide flex flex-col items-center gap-2">
+                            <img src="{{ asset('storage/' . $partner->image) }}"
+                                 alt="{{ $partner->name_en }}"
+                                 class="h-[125px] md:h-[125px] w-[250px] object-contain">
+                            <span class="text-black text-sm md:text-base font-semibold">
+                            {{ $partner->name_en }}
+                        </span>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-
         </div>
     </section>
     <!-- Contact Section -->
-    <section class="bg-blue-50 py-12 px-4">
+    <section class="bg-[#E9F3FA] py-12 px-4">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-3xl sm:text-3xl md:text-5xl font-bold mb-8">
                 Get professional and specialist real estate advice
@@ -430,6 +431,7 @@
                     <div>
                         <label class="block text-sm font-semibold text-left">Real Estate Development</label>
                         <select name="development_type" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
+                            <option value="real estate">Select Below</option>
                             <option value="real estate">real estate</option>
                             <option value="commercial">commercial</option>
                             <option value="residential">residential</option>
