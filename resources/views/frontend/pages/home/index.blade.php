@@ -337,23 +337,23 @@
                 <form id="contactForm" class="space-y-4">
                     <div>
                         <label class="block text-sm font-semibold text-left">{{ __('full_name') }}</label>
-                        <input type="text" name="name" placeholder="Enter name" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
+                        <input type="text" name="name" placeholder="{{ __('full_name') }}" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-left">{{ __('email') }}</label>
-                        <input type="email" name="email" placeholder="Enter mail" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
+                        <input type="email" name="email" placeholder="{{ __('email') }}" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-left">{{ __('real_estate_development') }}</label>
                         <select name="development_type" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
-                            <option value="real estate">Select Below</option>
-                            <option value="real estate">real estate</option>
-                            <option value="commercial">commercial</option>
-                            <option value="residential">residential</option>
+                            <option value="">{{ __('select_below') }}</option>
+                            <option value="real_estate">{{ __('real_estate') }}</option>
+                            <option value="commercial">{{ __('commercial') }}</option>
+                            <option value="residential">{{ __('residential') }}</option>
                         </select>
                     </div>
                     <button type="submit" class="w-full bg-[#0F548E] text-white font-semibold p-3 gap-3 rounded-lg hover:bg-blue-900 flex justify-center items-center">
-                        Get A Quote
+                        {{ __('get_a_quote') }}
                     </button>
                 </form>
             </div>
@@ -362,37 +362,36 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const slides = document.querySelectorAll("#vision-slider [data-slide]");
-            const prevBtn = document.getElementById("vision-prev");
-            const nextBtn = document.getElementById("vision-next");
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        const totalSlides = dots.length;
 
-            let current = 0;
+        function updateSlider(index) {
+            let perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+            slider.style.transform = `translateX(-${index * (100 / perView)}%)`;
 
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.style.opacity = (i === index) ? "1" : "0";
-                    slide.style.zIndex = (i === index) ? "10" : "0";
-                });
-            }
+            dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+            dots[index].classList.add('bg-blue-500');
+        }
 
-            prevBtn.addEventListener("click", () => {
-                current = (current - 1 + slides.length) % slides.length;
-                showSlide(current);
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.dataset.index);
+                updateSlider(currentIndex);
             });
-
-            nextBtn.addEventListener("click", () => {
-                current = (current + 1) % slides.length;
-                showSlide(current);
-            });
-
-
-            setInterval(() => {
-                current = (current + 1) % slides.length;
-                showSlide(current);
-            }, 6000);
         });
+
+        updateSlider(currentIndex);
+
+        window.addEventListener('resize', () => updateSlider(currentIndex));
     </script>
+
+
+
+
+
+
 
 
     <script>

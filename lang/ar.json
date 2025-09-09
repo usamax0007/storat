@@ -16,6 +16,12 @@
     "full_name": "الاسم الكامل",
     "email": "البريد الإلكتروني",
     "real_estate_development": "تطوير عقاري",
-    "get_a_quote": "احصل على عرض سعر"
+    "get_a_quote": "احصل على عرض سعر",
+    "select_below": "اختر أدناه",
+    "real_estate": "عقارات",
+    "commercial": "تجاري",
+    "residential": "سكني",
+    "powered_by": "مشغل بواسطة: <span class='font-semibold'>Cloud lift solutions</span>"
 }
+
 

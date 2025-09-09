@@ -16,6 +16,12 @@
     "full_name": "Full Name",
     "email": "Email",
     "real_estate_development": "Real Estate Development",
-    "get_a_quote": "Get A Quote"
+    "get_a_quote": "Get A Quote",
+    "select_below": "Select Below",
+    "real_estate": "Real Estate",
+    "commercial": "Commercial",
+    "residential": "Residential",
+    "powered_by": "Powered by: <span class='font-semibold'>Cloud lift solutions</span>"
+
 }
 

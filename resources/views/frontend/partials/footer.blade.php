@@ -46,7 +46,7 @@
         </div>
 
         <div class="border-t border-white/40 pt-4 text-center text-sm">
-            Powered by: <span class="font-semibold">Cloud lift solutions</span>
+            {!! __('powered_by') !!}
         </div>
     </div>
 </footer>
