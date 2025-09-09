@@ -19,6 +19,10 @@ class CmsSeeder extends Seeder
             'email1' => 'info@storat-re.com',
             'email2' => 'info@storat.com',
             'address' => '1st Floor, Masila Ventures Co, Offices, Noor Investment Building, Opposite Salhia Complex.',
+            'instagram' => 'https://instagram.com/',
+            'linkedin'  => 'https://linkedin.com/',
+            'facebook'  => 'https://facebook.com',
+            'twitter'   => 'https://twitter.com',
         ]);
     }
 }
