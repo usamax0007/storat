@@ -11,7 +11,7 @@
 
             <!-- Center: Desktop Menu -->
             <nav class="hidden lg:flex justify-center">
-                <ul class="grid grid-flow-col whitespace-nowrap gap-8 xl:gap-8 text-xl font-bold text-white">
+                <ul class="grid grid-flow-col whitespace-nowrap gap-6 xl:gap-8 text-xl font-bold text-white">
                     <li><a href="{{route('home')}}" class="hover:opacity-70">Home</a></li>
                     <li><a href="#" class="hover:opacity-70">About Us</a></li>
                     <li><a href="#" class="hover:opacity-70">Services</a></li>

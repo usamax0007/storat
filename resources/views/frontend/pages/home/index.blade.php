@@ -34,8 +34,8 @@
                                 </div>
 
                                 <!-- White Info Box -->
-                                <div class="absolute bottom-6 sm:bottom-12 md:bottom-[206px] right-4 sm:right-6 md:right-8
-                                        bg-white rounded-2xl shadow-lg p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-[90%] sm:w-auto">
+                                <div class="absolute bottom-6 sm:bottom-12 md:bottom-[206px]
+                            end-4 sm:end-6 md:end-8 bg-white rounded-2xl shadow-lg p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-[90%] sm:w-auto">
 
                                     <!-- Renters -->
                                     <div class="flex flex-col items-start gap-2 sm:gap-3">
@@ -58,7 +58,6 @@
                                             <p class="text-xs sm:text-sm text-black">{{$heroSections->properties_sub_heading_en}}</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         @endforeach
@@ -69,12 +68,12 @@
                         <div class="px-4 sm:px-8 md:px-16 text-white max-w-lg">
                             <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{ app()->getLocale() === 'en' ? $heroSections->first()->title_en : $heroSections->first()->title_ar }}</p>
                             <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold leading-tight md:leading-[1.15]">
-                                {{$heroSections->first()->description_en}} <br>
+                                {{app()->getLocale() === 'en' ? $heroSections->first()->description_en : $heroSections->first()->description_ar}} <br>
                             </h1>
-                            <a href="{{$heroSections->first()->button_link}}"
+                            <a href="{{ $heroSections->first()->button_link}}"
                                class="mt-6 md:mt-10 inline-flex items-center w-40 sm:w-52 gap-2 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
-                                <span class="text-sm sm:text-base">{{$heroSections->first()->button_text_en}}</span>
-                                <svg width="22" height="22" class="ml-1 sm:ml-2" viewBox="0 0 25 24" fill="none"
+                                <span class="text-sm sm:text-base">{{ app()->getLocale() === 'en' ? $heroSections->first()->button_text_en : $heroSections->first()->button_text_ar}}</span>
+                                <svg width="22" height="22" class="ml-1 sm:ml-2 rtl:rotate-180" viewBox="0 0 25 24" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727" stroke="#0F548E"
                                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -85,8 +84,8 @@
                         </div>
 
                         <!-- White Info Box (Single Image) -->
-                        <div class="absolute bottom-6 sm:bottom-12 md:bottom-[206px] right-4 sm:right-6 md:right-8
-                                bg-white rounded-2xl shadow-lg p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-[90%] sm:w-auto">
+                        <div class="absolute bottom-6 sm:bottom-12 md:bottom-[206px]
+                            end-4 sm:end-6 md:end-8 bg-white rounded-2xl shadow-lg p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-[90%] sm:w-auto">
 
                             <!-- Renters -->
                             <div class="flex flex-col items-start gap-2 sm:gap-3">
@@ -94,8 +93,12 @@
                                     <img src="{{ asset('storage/' .$heroSections->first()->rent_icon) }}" alt="">
                                 </div>
                                 <div>
-                                    <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->first()->rent_heading_en}}</p>
-                                    <p class="text-xs sm:text-sm text-black">{{$heroSections->first()->rent_sub_heading_en}}</p>
+                                    <p class="text-base sm:text-lg font-bold text-[#0F548E]">
+                                        {{$heroSections->first()->rent_heading_en}}
+                                    </p>
+                                    <p class="text-xs sm:text-sm text-black">
+                                        {{$heroSections->first()->rent_sub_heading_en}}
+                                    </p>
                                 </div>
                             </div>
 
@@ -105,11 +108,14 @@
                                     <img src="{{ asset('storage/' .$heroSections->first()->properties_icon) }}" alt="">
                                 </div>
                                 <div>
-                                    <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->first()->properties_heading_en}}</p>
-                                    <p class="text-xs sm:text-sm text-black">{{$heroSections->first()->properties_sub_heading_en}}</p>
+                                    <p class="text-base sm:text-lg font-bold text-[#0F548E]">
+                                        {{$heroSections->first()->properties_heading_en}}
+                                    </p>
+                                    <p class="text-xs sm:text-sm text-black">
+                                        {{$heroSections->first()->properties_sub_heading_en}}
+                                    </p>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 @endif
@@ -267,8 +273,9 @@
     <section class="bg-white py-16" id="clients">
         <div class="mx-auto px-6">
             <h2 class="text-2xl md:text-[56px] font-bold text-center pb-20">Our Partners</h2>
-            <div class="swiper clients-swiper flex">
-                <div class="swiper-wrapper items-center flex">
+
+            <div class="swiper clients-swiper flex overflow-hidden"> <!-- ✅ added overflow-hidden -->
+                <div class="swiper-wrapper items-center flex transition-transform duration-300 ease-in-out">
                     @foreach($partners as $partner)
                         <div class="swiper-slide flex flex-col items-center gap-2">
                             <img src="{{ asset('storage/' . $partner->image) }}"
@@ -283,6 +290,7 @@
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section class="bg-[#E9F3FA] py-12 px-4">
         <div class="max-w-5xl mx-auto text-center">
@@ -385,30 +393,38 @@
 
 
     <script>
-        const slider = document.getElementById('slider');
-        const dots = document.querySelectorAll('.dot');
-        let currentIndex = 0;
-        const totalSlides = dots.length;
+        document.addEventListener("DOMContentLoaded", () => {
+            const sliderSection = document.querySelector('#clients');
+            const slider = sliderSection.querySelector('.swiper-wrapper'); // only inside #clients
+            const dots = sliderSection.querySelectorAll('.dot');
+            let currentIndex = 0;
+            const totalSlides = slider.children.length;
 
-        function updateSlider(index) {
-            let perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-            slider.style.transform = `translateX(-${index * (100 / perView)}%)`;
+            function updateSlider(index) {
+                let perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+                slider.style.transform = `translateX(-${index * (100 / perView)}%)`;
+                slider.style.transition = "transform 0.4s ease"; // smooth slide
 
-            dots.forEach(dot => dot.classList.remove('bg-blue-500'));
-            dots[index].classList.add('bg-blue-500');
-        }
+                if (dots.length) {
+                    dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+                    if (dots[index]) dots[index].classList.add('bg-blue-500');
+                }
+            }
 
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                currentIndex = parseInt(dot.dataset.index);
-                updateSlider(currentIndex);
-            });
+            if (dots.length) {
+                dots.forEach(dot => {
+                    dot.addEventListener('click', () => {
+                        currentIndex = parseInt(dot.dataset.index);
+                        updateSlider(currentIndex);
+                    });
+                });
+            }
+
+            updateSlider(currentIndex);
+            window.addEventListener('resize', () => updateSlider(currentIndex));
         });
-
-        updateSlider(currentIndex);
-
-        window.addEventListener('resize', () => updateSlider(currentIndex));
     </script>
+
 @endsection
 
 
