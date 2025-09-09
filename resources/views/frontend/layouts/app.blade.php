@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Storat</title>
@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    @livewireStyles
 </head>
 
 <style>
@@ -180,6 +181,14 @@
                 freeModeMomentum: false
             });
         </script>
+        @livewireScripts
 
+        <script>
+            document.addEventListener('livewire:init', () => {
+                Livewire.on('language-changed', () => {
+                    window.location.reload();
+                });
+            });
+        </script>
     </body>
 </html>

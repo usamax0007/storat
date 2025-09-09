@@ -14,7 +14,7 @@
                                 <!-- Text Overlay -->
                                 <div class="relative h-full flex items-center pt-16 md:pt-24">
                                     <div class="px-4 sm:px-8 md:px-16 text-white max-w-lg">
-                                        <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{$heroSection->title_en}}</p>
+                                        <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{ app()->getLocale() === 'en' ? $heroSection->title_en : $heroSection->title_ar}}</p>
                                         <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold leading-tight md:leading-[1.15]">
                                             {{$heroSection->description_en}} <br>
                                         </h1>
@@ -67,7 +67,7 @@
                     <div class="relative h-full flex items-center pt-16 md:pt-24 h-full bg-cover"
                          style="background-image: url('{{ asset('storage/'.$heroSections->first()->image) }}');">
                         <div class="px-4 sm:px-8 md:px-16 text-white max-w-lg">
-                            <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{$heroSections->first()->title_en}}</p>
+                            <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{ app()->getLocale() === 'en' ? $heroSections->first()->title_en : $heroSections->first()->title_ar }}</p>
                             <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold leading-tight md:leading-[1.15]">
                                 {{$heroSections->first()->description_en}} <br>
                             </h1>
