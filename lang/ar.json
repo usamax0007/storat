@@ -1,5 +1,21 @@
 {
     "Dashboard": "لوحة التحكم",
-    "about_us": "معلومات عنا"
+    "about_us": "معلومات عنا",
+    "form_heading": "احصل على استشارات عقارية مهنية ومتخصصة",
+    "contacts": "اتصل بنا",
 
+    "home": "الرئيسية",
+    "services": "خدماتنا",
+    "vision": "رؤيتنا",
+    "all_projects": "جميع المشاريع",
+    "clients": "عملاؤنا",
+    "our_services": "خدماتنا",
+    "latest_projects": "أحدث المشاريع",
+    "our_partners": "شركاؤنا",
+
+    "full_name": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "real_estate_development": "تطوير عقاري",
+    "get_a_quote": "احصل على عرض سعر"
 }
+

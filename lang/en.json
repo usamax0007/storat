@@ -1,4 +1,21 @@
 {
     "Dashboard": "Dashboard",
-    "about_us": "About Us"
+    "about_us": "About Us",
+    "form_heading": "Get professional and specialist real estate advice",
+    "contacts": "Contacts",
+
+    "home": "Home",
+    "services": "Services",
+    "vision": "Vision",
+    "all_projects": "All Projects",
+    "clients": "Clients",
+    "our_services": "Our Services",
+    "latest_projects": "Latest Projects",
+    "our_partners": "Our Partners",
+
+    "full_name": "Full Name",
+    "email": "Email",
+    "real_estate_development": "Real Estate Development",
+    "get_a_quote": "Get A Quote"
 }
+

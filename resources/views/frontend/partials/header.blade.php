@@ -12,15 +12,16 @@
             <!-- Center: Desktop Menu -->
             <nav class="hidden lg:flex justify-center">
                 <ul class="grid grid-flow-col whitespace-nowrap gap-6 xl:gap-8 text-xl font-bold text-white">
-                    <li><a href="{{route('home')}}" class="hover:opacity-70">Home</a></li>
-                    <li><a href="#" class="hover:opacity-70">About Us</a></li>
-                    <li><a href="#" class="hover:opacity-70">Services</a></li>
-                    <li><a href="#" class="hover:opacity-70">Vision</a></li>
-                    <li><a href="#" class="hover:opacity-70">All Projects</a></li>
-                    <li><a href="#" class="hover:opacity-70">Clients</a></li>
-                    <li><a href="#" class="hover:opacity-70">Contacts</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:opacity-70">{{ __('home') }}</a></li>
+                    <li><a href="#" class="hover:opacity-70">{{ __('about_us') }}</a></li>
+                    <li><a href="#" class="hover:opacity-70">{{ __('services') }}</a></li>
+                    <li><a href="#" class="hover:opacity-70">{{ __('vision') }}</a></li>
+                    <li><a href="#" class="hover:opacity-70">{{ __('all_projects') }}</a></li>
+                    <li><a href="#" class="hover:opacity-70">{{ __('clients') }}</a></li>
+                    <li><a href="#" class="hover:opacity-70">{{ __('contacts') }}</a></li>
                 </ul>
             </nav>
+
 
             <!-- Right: Call button (desktop) + Hamburger (mobile) -->
             <div class="flex items-center justify-end gap-3">

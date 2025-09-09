@@ -16,11 +16,11 @@
                                     <div class="px-4 sm:px-8 md:px-16 text-white max-w-lg">
                                         <p class="text-xs sm:text-base md:text-2xl mb-2 md:mb-3">{{ app()->getLocale() === 'en' ? $heroSection->title_en : $heroSection->title_ar}}</p>
                                         <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold leading-tight md:leading-[1.15]">
-                                            {{$heroSection->description_en}} <br>
+                                            {{app()->getLocale() === 'en' ?$heroSection->description_en:$heroSection->description_ar}} <br>
                                         </h1>
                                         <a href="{{$heroSection->button_link}}"
                                            class="mt-6 md:mt-10 inline-flex items-center w-40 sm:w-52 gap-2 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-white text-[#0F548E] font-semibold rounded-md shadow hover:bg-gray-100 transition">
-                                            <span class="text-sm sm:text-base">{{$heroSection->button_text_en}}</span>
+                                            <span class="text-sm sm:text-base">{{app()->getLocale() === 'en' ? $heroSection->button_text_en:$heroSection->button_text_ar}}</span>
                                             <svg width="22" height="22" class="ml-1 sm:ml-2" viewBox="0 0 25 24" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12.2773 4.02734L20.6297 12L12.2773 19.9727"
@@ -43,8 +43,8 @@
                                             <img src="{{ asset('storage/' .$heroSections->rent_icon) }}" alt="">
                                         </div>
                                         <div>
-                                            <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->rent_heading_en}}</p>
-                                            <p class="text-xs sm:text-sm text-black">{{$heroSections->rent_sub_heading_en}}</p>
+                                            <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{app()->getLocale() === 'en' ? $heroSections->rent_heading_en : $heroSections->rent_heading_ar}}</p>
+                                            <p class="text-xs sm:text-sm text-black">{{app()->getLocale() === 'en' ? $heroSections->rent_sub_heading_en : $heroSections->rent_sub_heading_ar}}</p>
                                         </div>
                                     </div>
 
@@ -54,8 +54,8 @@
                                             <img src="{{ asset('storage/' .$heroSections->properties_icon) }}" alt="">
                                         </div>
                                         <div>
-                                            <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{$heroSections->properties_heading_en}}</p>
-                                            <p class="text-xs sm:text-sm text-black">{{$heroSections->properties_sub_heading_en}}</p>
+                                            <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{ app()->getLocale() === 'en' ? $heroSections->properties_heading_en : $heroSections->properties_heading_ar}}</p>
+                                            <p class="text-xs sm:text-sm text-black">{{app()->getLocale() === 'en' ? $heroSections->properties_sub_heading_en : $heroSections->properties_sub_heading_ar}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -94,10 +94,10 @@
                                 </div>
                                 <div>
                                     <p class="text-base sm:text-lg font-bold text-[#0F548E]">
-                                        {{$heroSections->first()->rent_heading_en}}
+                                        {{app()->getLocale() === 'en' ? $heroSections->first()->rent_heading_en : $heroSections->first()->rent_heading_ar}}
                                     </p>
                                     <p class="text-xs sm:text-sm text-black">
-                                        {{$heroSections->first()->rent_sub_heading_en}}
+                                        {{app()->getLocale() === 'en' ? $heroSections->first()->rent_sub_heading_en : $heroSections->first()->rent_sub_heading_ar}}
                                     </p>
                                 </div>
                             </div>
@@ -109,10 +109,10 @@
                                 </div>
                                 <div>
                                     <p class="text-base sm:text-lg font-bold text-[#0F548E]">
-                                        {{$heroSections->first()->properties_heading_en}}
+                                        {{app()->getLocale() === 'en' ? $heroSections->first()->properties_heading_en : $heroSections->first()->properties_heading_ar}}
                                     </p>
                                     <p class="text-xs sm:text-sm text-black">
-                                        {{$heroSections->first()->properties_sub_heading_en}}
+                                        {{app()->getLocale() === 'en' ? $heroSections->first()->properties_sub_heading_en : $heroSections->first()->properties_sub_heading_ar}}
                                     </p>
                                 </div>
                             </div>
@@ -126,40 +126,42 @@
 
     <!-- About / Intro Section -->
     <section class="bg-white py-12 md:py-20">
-        <div class="max-w-full mx-auto px-4 lg:px-12">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="max-w-7xl mx-auto px-4 lg:px-12">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start md:items-center">
+
                 <!-- Left Images -->
-                <div class="relative pr-10">
+                <div class="relative flex justify-center md:justify-start">
                     <!-- Main big image -->
                     <img src="{{ asset('storage/' . $about->image_main) }}"
                          alt="House"
-                         class="w-[470px] h-[420px] md:h-[520px] object-cover">
-
+                         class="w-full max-w-[470px] h-[260px] sm:h-[360px] md:h-[520px] object-cover rounded-lg shadow-md">
 
                     <!-- Small overlapping image -->
-                    <div class="absolute bottom-[-100px] left-[180px] md:left-[384px] w-[220px] md:w-[260px] rounded-xl overflow-hidden shadow-lg border-4 border-white">
+                    <div class="absolute -bottom-10 sm:-bottom-12 md:-bottom-16 right-2 sm:right-6 md:-right-12
+                            w-32 sm:w-44 md:w-60 rounded-xl overflow-hidden shadow-lg border-4 border-white">
                         <img src="{{ asset('storage/' . $about->image_inner) }}"
                              alt="Modern building"
-                             class="w-full h-[200px] md:h-[240px] object-cover">
+                             class="w-full h-[120px] sm:h-[160px] md:h-[220px] object-cover">
                     </div>
                 </div>
 
                 <!-- Right Content -->
-                <div class="space-y-5 mt-12 md:mt-0">
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-black tracking-tight">
-                        {{ $about->title_en }}
+                <div class="space-y-6 mt-16 md:mt-0 text-center md:text-left">
+                    <h2 class="text-2xl sm:text-4xl md:text-5xl rtl:text-right font-extrabold text-black tracking-tight leading-snug">
+                        {{ app()->getLocale() === 'en' ? $about->title_en : $about->title_ar }}
                     </h2>
-                    <p class="text-xl md:text-2xl font-semibold text-gray-900">
-                        {{ $about->subtitle_en }}
+                    <p class="text-base sm:text-xl md:text-2xl rtl:text-right font-semibold text-gray-900">
+                        {{ app()->getLocale() === 'en' ? $about->subtitle_en : $about->subtitle_ar }}
                     </p>
-                    <div class="space-y-4 text-[14px] md:text-[16px] leading-relaxed text-[#62636C]">
-                        <p>{!! nl2br(e($about->description_en)) !!}</p>
-
+                    <div class="space-y-4 text-sm rtl:text-right leading-relaxed text-[#62636C]">
+                        <p>{!! nl2br(e(app()->getLocale() === 'en' ? $about->description_en : $about->description_ar)) !!}</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
 
     <!-- Services Section -->
     <section class="bg-[#e9f3fa] py-20">
@@ -173,20 +175,20 @@
                         <!-- Icon -->
                         <div class="w-[120px] h-[120px] rounded-lg bg-blue-50 flex items-center justify-center p-6">
                             <img src="{{ asset('storage/'.$service->icon) }}"
-                                 alt="{{ $service->title_en }}"
+                                 alt="{{app()->getLocale() === 'en' ? $service->title_en : $service->title_ar}}"
                                  class="w-[50%] h-[50%]">
                         </div>
 
                         <!-- Title -->
                         <h3 class="mt-4 text-[32px] font-bold text-black">
                             <a href="{{ route('service.show', $service->id) }}">
-                                {{ $service->title_en }}
+                                {{app()->getLocale() === 'en' ? $service->title_en : $service->title_ar}}
                             </a>
                         </h3>
 
                         <!-- Subtitle -->
                         <p class="mt-2 text-[#7B7A7A] text-[20px] leading-relaxed">
-                            {{ $service->sub_title_en }}
+                            {{app()->getLocale() === 'en' ? $service->sub_title_en : $service->sub_title_ar}}
                         </p>
                     </div>
 
@@ -200,31 +202,32 @@
         @foreach($visions as $index => $vision)
             <!-- Slide -->
             <div class="absolute inset-0 transition-opacity duration-700
-                    @if($index === 0) opacity-100 @else opacity-0 @endif"
+                @if($index === 0) opacity-100 @else opacity-0 @endif"
                  data-slide="{{ $index }}">
 
-                <!-- Background Image -->
-                <img src="{{ asset('storage/'.$vision->image) }}"
-                     alt="{{ $vision->title_en }}"
-                     class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black/50"></div>
+                <!-- Background Image with Overlay -->
+                <div class="w-full h-full bg-cover bg-center relative"
+                     style="background-image: url('{{ asset('storage/'.$vision->image) }}')">
+                    <div class="absolute inset-0 bg-black/50"></div>
 
-                <!-- Content -->
-                <div class="absolute top-0 right-[306px] flex flex-col items-center justify-center text-center h-full px-6">
-                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                        {{ $vision->title_en }}
-                    </h2>
-                    <div class="max-w-4xl text-white text-base md:text-lg leading-relaxed space-y-4">
-                        {!! nl2br(e($vision->description_en)) !!}
+                    <!-- Content -->
+                    <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-6">
+                        <h2 class="text-3xl md:text-6xl font-bold text-white mb-6">
+                            {{ app()->getLocale() === 'en' ? $vision->title_en : $vision->title_ar }}
+                        </h2>
+                        <div class="max-w-4xl text-white text-base md:text-lg leading-relaxed space-y-4">
+                            {!! nl2br(e(app()->getLocale() === 'en' ? $vision->description_en : $vision->description_ar)) !!}
+                        </div>
                     </div>
                 </div>
             </div>
         @endforeach
 
+
         <!-- Controls -->
         <div class="absolute inset-0 flex items-center justify-between px-6 z-20">
             <button id="vision-prev"
-                    class=""
+                    class="hidden lg:block rtl:rotate-180"
                     aria-label="Previous slide">
                 <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M38.174 0.332031H15.8273C6.12065 0.332031 0.333984 6.1187 0.333984 15.8254V38.1454C0.333984 47.8787 6.12065 53.6654 15.8273 53.6654H38.1473C47.854 53.6654 53.6407 47.8787 53.6407 38.172V15.8254C53.6673 6.1187 47.8807 0.332031 38.174 0.332031ZM43.0007 28.9987H15.8273L23.854 37.0254C24.6273 37.7987 24.6273 39.0787 23.854 39.852C23.454 40.252 22.9473 40.4387 22.4407 40.4387C21.934 40.4387 21.4273 40.252 21.0273 39.852L9.58732 28.412C9.21398 28.0387 9.00065 27.532 9.00065 26.9987C9.00065 26.4654 9.21398 25.9587 9.58732 25.5854L21.0273 14.1454C21.8007 13.372 23.0807 13.372 23.854 14.1454C24.6273 14.9187 24.6273 16.1987 23.854 16.972L15.8273 24.9987H43.0007C44.094 24.9987 45.0007 25.9054 45.0007 26.9987C45.0007 28.092 44.094 28.9987 43.0007 28.9987Z" fill="#CCCFD3"/>
@@ -232,7 +235,7 @@
 
             </button>
             <button id="vision-next"
-                    class=""
+                    class="hidden lg:block rtl:rotate-180"
                     aria-label="Next slide">
                 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M43.174 5.33203H20.8273C11.1207 5.33203 5.33398 11.1187 5.33398 20.8254V43.1454C5.33398 52.8787 11.1207 58.6654 20.8273 58.6654H43.1473C52.854 58.6654 58.6407 52.8787 58.6407 43.172V20.8254C58.6673 11.1187 52.8807 5.33203 43.174 5.33203ZM49.414 33.412L37.974 44.852C37.574 45.252 37.0673 45.4387 36.5607 45.4387C36.054 45.4387 35.5473 45.252 35.1473 44.852C34.374 44.0787 34.374 42.7987 35.1473 42.0254L43.174 33.9987H16.0007C14.9073 33.9987 14.0007 33.092 14.0007 31.9987C14.0007 30.9054 14.9073 29.9987 16.0007 29.9987H43.174L35.1473 21.972C34.374 21.1987 34.374 19.9187 35.1473 19.1454C35.9207 18.372 37.2007 18.372 37.974 19.1454L49.414 30.5854C49.7873 30.9587 50.0007 31.4654 50.0007 31.9987C50.0007 32.532 49.7873 33.0387 49.414 33.412Z" fill="#0F548E"/>
@@ -279,10 +282,10 @@
                     @foreach($partners as $partner)
                         <div class="swiper-slide flex flex-col items-center gap-2">
                             <img src="{{ asset('storage/' . $partner->image) }}"
-                                 alt="{{ $partner->name_en }}"
+                                 alt="{{app()->getLocale() === 'en' ? $partner->name_en : $partner->name_ar}}"
                                  class="h-[125px] md:h-[125px] w-[250px] object-contain">
                             <span class="text-black text-sm md:text-base font-semibold">
-                            {{ $partner->name_en }}
+                            {{app()->getLocale() === 'en' ? $partner->name_en : $partner->name_ar}}
                         </span>
                         </div>
                     @endforeach
