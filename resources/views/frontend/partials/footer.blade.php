@@ -11,14 +11,15 @@
 
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-4 text-center mb-6">
-            <a href="{{route('home')}}" class="font-semibold hover:underline">Home</a>
-            <a href="#" class="font-semibold hover:underline">About Us</a>
-            <a href="#" class="font-semibold hover:underline">Services</a>
-            <a href="#" class="font-semibold hover:underline">Vision</a>
-            <a href="#" class="font-semibold hover:underline">All Project</a>
-            <a href="#" class="font-semibold hover:underline">Clients</a>
-            <a href="#" class="font-semibold hover:underline col-span-2 sm:col-span-1">Contacts</a>
+            <a href="{{ route('home') }}" class="font-semibold hover:underline">{{ __('home') }}</a>
+            <a href="#" class="font-semibold hover:underline">{{ __('about_us') }}</a>
+            <a href="#" class="font-semibold hover:underline">{{ __('services') }}</a>
+            <a href="#" class="font-semibold hover:underline">{{ __('vision') }}</a>
+            <a href="#" class="font-semibold hover:underline">{{ __('all_projects')}}</a>
+            <a href="#" class="font-semibold hover:underline">{{ __('clients') }}</a>
+            <a href="#" class="font-semibold hover:underline col-span-2 sm:col-span-1">{{ __('contacts') }}</a>
         </div>
+
 
 
         <div class="flex flex-col md:flex-row items-center justify-center text-sm space-y-3 md:space-y-0 md:space-x-6 mb-6 pt-5">

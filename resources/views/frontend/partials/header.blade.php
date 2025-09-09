@@ -49,13 +49,13 @@
         <!-- Mobile menu: expands when the checkbox is checked -->
         <nav class="lg:hidden overflow-hidden max-h-0 peer-checked:max-h-96 transition-all duration-300">
             <ul class="mt-2 mb-3 flex flex-col gap-1 text-xl font-semibold text-black bg-white">
-                <li><a href="{{route('home')}}" class="block px-3 py-2 rounded hover:bg-white/40">Home</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">About Us</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">Services</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">Vision</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">All Projects</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">Clients</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">Contacts</a></li>
+                <li><a href="{{ route('home') }}" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('home') }}</a></li>
+                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('about_us') }}</a></li>
+                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('services') }}</a></li>
+                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('vision') }}</a></li>
+                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('all_projects') }}</a></li>
+                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('clients') }}</a></li>
+                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('contacts') }}</a></li>
             </ul>
         </nav>
     </div>

@@ -167,7 +167,7 @@
     <section class="bg-[#e9f3fa] py-20">
         <div class="mx-auto px-4 px-10 lg:px-20">
             <h2 class="text-3xl md:text-6xl font-bold text-center text-black mb-28">
-                Our Services
+                {{ __('our_services') }}
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
                 @foreach($services as $service)
@@ -249,7 +249,7 @@
     <section class="bg-[#e9f3fa] py-16 md:py-20">
         <div class="mx-auto">
             <h2 class="text-4xl md:text-6xl lg:text-6xl font-bold text-center text-black tracking-tight">
-                Latest Projects
+                {{ __('latest_projects') }}
             </h2>
             <div class="relative mt-10 md:mt-12 overflow-hidden">
                 <div id="slider" class="flex transition-transform duration-500 ease-in-out">
@@ -275,7 +275,7 @@
 
     <section class="bg-white py-16" id="clients">
         <div class="mx-auto px-6">
-            <h2 class="text-2xl md:text-[56px] font-bold text-center pb-20">Our Partners</h2>
+            <h2 class="text-2xl md:text-[56px] font-bold text-center pb-20">{{ __('our_partners') }}</h2>
 
             <div class="swiper clients-swiper flex overflow-hidden"> <!-- ✅ added overflow-hidden -->
                 <div class="swiper-wrapper items-center flex transition-transform duration-300 ease-in-out">
@@ -298,7 +298,7 @@
     <section class="bg-[#E9F3FA] py-12 px-4">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-3xl sm:text-3xl md:text-5xl font-bold mb-8">
-                Get professional and specialist real estate advice
+                {{ __('form_heading') }}
             </h2>
             <div class="bg-white border border-blue-200 rounded-lg shadow-sm grid grid-cols-1 md:grid-cols-3 items-center text-center py-4 px-6 mb-8 sm:max-w-3xl md:max-w-5xl mx-auto gap-6">
                 <a href="tel:+96551220400"
@@ -336,15 +336,15 @@
             <div class="bg-white border rounded-xl shadow p-6 mx-auto sm:max-w-3xl md:max-w-5xl">
                 <form id="contactForm" class="space-y-4">
                     <div>
-                        <label class="block text-sm font-semibold text-left">Full Name</label>
+                        <label class="block text-sm font-semibold text-left">{{ __('full_name') }}</label>
                         <input type="text" name="name" placeholder="Enter name" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-left">Email</label>
+                        <label class="block text-sm font-semibold text-left">{{ __('email') }}</label>
                         <input type="email" name="email" placeholder="Enter mail" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-left">Real Estate Development</label>
+                        <label class="block text-sm font-semibold text-left">{{ __('real_estate_development') }}</label>
                         <select name="development_type" class="w-full border rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-blue-500">
                             <option value="real estate">Select Below</option>
                             <option value="real estate">real estate</option>
