@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             VisionSeeder::class,
             ProjectSeeder::class,
             PartnersSeeder::class,
+            CmsSeeder::class,
         ]);
     }
 }

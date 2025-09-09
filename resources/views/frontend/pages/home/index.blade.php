@@ -181,7 +181,7 @@
 
                         <!-- Title -->
                         <h3 class="mt-4 text-[32px] font-bold text-black">
-                            <a href="{{ route('service.show', $service->id) }}">
+                            <a href="{{ route('service.show', $service->slug) }}">
                                 {{app()->getLocale() === 'en' ? $service->title_en : $service->title_ar}}
                             </a>
                         </h3>
@@ -301,14 +301,14 @@
                 {{ __('form_heading') }}
             </h2>
             <div class="bg-white border border-blue-200 rounded-lg shadow-sm grid grid-cols-1 md:grid-cols-3 items-center text-center py-4 px-6 mb-8 sm:max-w-3xl md:max-w-5xl mx-auto gap-6">
-                <a href="tel:+96551220400"
+                <a href="tel:{{ $cmsSettings->phone1 }}"
                    class="flex items-center space-x-2 text-[#0F548E] font-semibold hover:underline">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.83332 4.66654C10.5858 4.66654 11.3333 5.41404 11.3333 7.16654H13C13 4.47904 11.5208 2.99987 8.83332 2.99987V4.66654ZM11.685 9.20237C11.5249 9.05683 11.3144 8.97921 11.0982 8.9859C10.8819 8.99259 10.6767 9.08305 10.5258 9.23821L8.53166 11.289C8.05166 11.1974 7.08666 10.8965 6.09332 9.90571C5.09999 8.91154 4.79916 7.94404 4.70999 7.46737L6.75916 5.47237C6.9145 5.32165 7.0051 5.11639 7.01179 4.90005C7.01848 4.6837 6.94073 4.47324 6.79499 4.31321L3.71582 0.927374C3.57003 0.766838 3.36739 0.66946 3.15095 0.655923C2.93451 0.642386 2.72132 0.713756 2.55666 0.854874L0.748324 2.40571C0.60425 2.5503 0.518257 2.74275 0.506657 2.94654C0.494157 3.15487 0.255824 8.08987 4.08249 11.9182C7.42082 15.2557 11.6025 15.4999 12.7542 15.4999C12.9225 15.4999 13.0258 15.4949 13.0533 15.4932C13.2571 15.4818 13.4494 15.3954 13.5933 15.2507L15.1433 13.4415C15.2845 13.277 15.3561 13.0639 15.3427 12.8474C15.3293 12.631 15.2321 12.4283 15.0717 12.2824L11.685 9.20237Z" fill="#0F548E"/>
                     </svg>
-                    <span>+965 5122 0400</span>
+                    <span>{{ $cmsSettings->phone1 }}</span>
                 </a>
-                <a href="mailto:info@storat-re.com"
+                <a href="mailto:{{ $cmsSettings->email1 }}"
                    class="flex items-center justify-center space-x-2 text-[#0F548E] font-semibold hover:underline">
                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14.25 4.375H3.625V11.875H5.5V13.75L8 11.875H14.25V4.375Z" stroke="#0F548E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -317,7 +317,7 @@
                         <path d="M7.0625 9.0625H10.8125" stroke="#0F548E" stroke-width="0.625" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M14.0438 6.25H17.375V13.75H15.5V15.625L13 13.75H9.25" stroke="#0F548E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span>info@storat-re.com</span>
+                    <span>{{ $cmsSettings->email1 }}</span>
                 </a>
                 <div class="flex justify-center md:justify-end space-x-4 text-[#0F548E]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

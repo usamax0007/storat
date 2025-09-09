@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
-    public function show($id)
+    public function show($slug)
     {
-        $service = Service::findOrFail($id);
+        $service = Service::where('slug', $slug)->firstOrFail();
         return view('frontend.pages.services.show', compact('service'));
     }
 }
