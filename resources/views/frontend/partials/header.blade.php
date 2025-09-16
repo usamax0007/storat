@@ -1,4 +1,4 @@
-<header class="absolute w-full z-50">
+<header class="bg-[#e9f3fa]">
     <div class="mx-auto px-4 lg:px-20">
         <!-- Hidden checkbox = menu toggle (no JS needed) -->
         <input id="nav-toggle" type="checkbox" class="peer hidden" />
@@ -11,7 +11,7 @@
 
             <!-- Center: Desktop Menu -->
             <nav class="hidden lg:flex justify-center">
-                <ul class="grid grid-flow-col whitespace-nowrap gap-6 xl:gap-8 text-xl font-bold text-white">
+                <ul class="grid grid-flow-col whitespace-nowrap gap-6 xl:gap-16 text-xl font-bold text-black">
                     <li><a href="{{ route('home') }}" class="hover:opacity-70">{{ __('home') }}</a></li>
                     <li><a href="#" class="hover:opacity-70">{{ __('about_us') }}</a></li>
                     <li><a href="#" class="hover:opacity-70">{{ __('services') }}</a></li>

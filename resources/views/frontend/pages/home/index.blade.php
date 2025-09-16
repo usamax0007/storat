@@ -1,8 +1,8 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <section class="bg-[#e9f3fa]">
+    <section class="bg-[#e9f3fa] py-10 px-4 lg:px-20">
         <div class="mx-auto">
-            <div class="relative overflow-hidden bg-cover bg-center h-[920px] md:min-h-screen" id="heroSlider">
+            <div class="relative overflow-hidden bg-cover rounded-xl bg-center h-[920px] md:min-h-screen" id="heroSlider">
                 <div class="absolute inset-0 bg-black/40"></div>
 
                 @if($heroSections->count() > 1)
@@ -32,33 +32,6 @@
                                         </a>
                                     </div>
                                 </div>
-
-                                <!-- White Info Box -->
-                                <div class="absolute bottom-6 sm:bottom-12 md:bottom-[206px]
-                            end-4 sm:end-6 md:end-8 bg-white rounded-2xl shadow-lg p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-[90%] sm:w-auto">
-
-                                    <!-- Renters -->
-                                    <div class="flex flex-col items-start gap-2 sm:gap-3">
-                                        <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
-                                            <img src="{{ asset('storage/' .$heroSections->rent_icon) }}" alt="">
-                                        </div>
-                                        <div>
-                                            <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{app()->getLocale() === 'en' ? $heroSections->rent_heading_en : $heroSections->rent_heading_ar}}</p>
-                                            <p class="text-xs sm:text-sm text-black">{{app()->getLocale() === 'en' ? $heroSections->rent_sub_heading_en : $heroSections->rent_sub_heading_ar}}</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Properties -->
-                                    <div class="flex flex-col items-start gap-2 sm:gap-3">
-                                        <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
-                                            <img src="{{ asset('storage/' .$heroSections->properties_icon) }}" alt="">
-                                        </div>
-                                        <div>
-                                            <p class="text-base sm:text-lg font-bold text-[#0F548E]">{{ app()->getLocale() === 'en' ? $heroSections->properties_heading_en : $heroSections->properties_heading_ar}}</p>
-                                            <p class="text-xs sm:text-sm text-black">{{app()->getLocale() === 'en' ? $heroSections->properties_sub_heading_en : $heroSections->properties_sub_heading_ar}}</p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         @endforeach
                     </div>
@@ -84,39 +57,6 @@
                         </div>
 
                         <!-- White Info Box (Single Image) -->
-                        <div class="absolute bottom-6 sm:bottom-12 md:bottom-[206px]
-                            end-4 sm:end-6 md:end-8 bg-white rounded-2xl shadow-lg p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-[90%] sm:w-auto">
-
-                            <!-- Renters -->
-                            <div class="flex flex-col items-start gap-2 sm:gap-3">
-                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
-                                    <img src="{{ asset('storage/' .$heroSections->first()->rent_icon) }}" alt="">
-                                </div>
-                                <div>
-                                    <p class="text-base sm:text-lg font-bold text-[#0F548E]">
-                                        {{app()->getLocale() === 'en' ? $heroSections->first()->rent_heading_en : $heroSections->first()->rent_heading_ar}}
-                                    </p>
-                                    <p class="text-xs sm:text-sm text-black">
-                                        {{app()->getLocale() === 'en' ? $heroSections->first()->rent_sub_heading_en : $heroSections->first()->rent_sub_heading_ar}}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Properties -->
-                            <div class="flex flex-col items-start gap-2 sm:gap-3">
-                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#e9f3fa]">
-                                    <img src="{{ asset('storage/' .$heroSections->first()->properties_icon) }}" alt="">
-                                </div>
-                                <div>
-                                    <p class="text-base sm:text-lg font-bold text-[#0F548E]">
-                                        {{app()->getLocale() === 'en' ? $heroSections->first()->properties_heading_en : $heroSections->first()->properties_heading_ar}}
-                                    </p>
-                                    <p class="text-xs sm:text-sm text-black">
-                                        {{app()->getLocale() === 'en' ? $heroSections->first()->properties_sub_heading_en : $heroSections->first()->properties_sub_heading_ar}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 @endif
             </div>
