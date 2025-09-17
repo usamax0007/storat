@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\AboutSection;
 use App\Models\HeroSection;
+use App\Models\ImpactPage;
 use App\Models\Partner;
 use App\Models\Project;
 use App\Models\Service;
@@ -21,6 +22,7 @@ class HomeController extends Controller
         $partners = Partner::all();
         $visions = Vision::all();
         $projects = Project::select('image')->get();
-        return view('frontend.pages.home.index',compact('heroSections','services', 'about', 'visions', 'projects', 'partners'));
+        $impact = ImpactPage::first();
+        return view('frontend.pages.home.index',compact('heroSections','services', 'about', 'visions', 'projects', 'partners', 'impact'));
     }
 }
