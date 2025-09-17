@@ -15,7 +15,7 @@ class AboutUsSeeder extends Seeder
     public function run(): void
     {
         // Source images in /public/assets/images
-        $sourceMain = public_path('assets/images/img_27.png');
+        $sourceMain = public_path('assets/images/img_39.png');
         $sourceInner = public_path('assets/images/img_28.png');
 
         // Destination folder inside storage/app/public

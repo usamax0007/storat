@@ -24,7 +24,7 @@ class ServicesSeeder extends Seeder
                 'description_ar' => 'من الحقائق الثابتة أن المحتوى المقروء لصفحة ما سيشتت انتباه القارئ عند النظر إلى شكل توضع الفقرات. يكمن الهدف من استخدام لوريم إيبسوم في توزيعه الطبيعي للأحرف، على عكس استخدام "هنا المحتوى"، "هنا المحتوى"، مما يجعله يبدو كنص مقروء.',
                 'slug' => 'retail_real',
                 'image' => 'img_1.jpg',
-                'icon' => 'img_29.png',
+                'icon' => 'img_40.png',
             ],
             [
                 'title_en' => 'Leasing, Buying And Selling, For All Real Estate Requirements',
@@ -35,7 +35,7 @@ class ServicesSeeder extends Seeder
                 'description_ar' => 'يتولى فريقنا العناية بكل شيء من الصيانة إلى إدارة المستأجرين، لضمان أن تعمل ممتلكاتك بكفاءة وفعالية.',
                 'slug' => 'leasing',
                 'image' => 'img_1.jpg',
-                'icon' => 'img_30.png',
+                'icon' => 'img_41.png',
             ],
             [
                 'title_en' => 'Consultancy Package',
@@ -46,7 +46,7 @@ class ServicesSeeder extends Seeder
                 'description_ar' => 'سواء كنت تشتري أو تعيد تمويل أو تطور الممتلكات، نحن نقدم خيارات تمويل تتناسب مع احتياجاتك.',
                 'slug' => 'consultancy_package',
                 'image' => 'img_1.jpg',
-                'icon' => 'img_31.png',
+                'icon' => 'img_42.png',
             ],
             [
                 'title_en' => 'Brands Acquisitions',
@@ -57,7 +57,7 @@ class ServicesSeeder extends Seeder
                 'description_ar' => 'يقوم فريقنا بتحليل السوق وتقديم خطط استثمار استراتيجية تتناسب مع احتياجاتك، مما يضمن عوائد عالية وأقل المخاطر.',
                 'slug' => 'brands_acquisitions',
                 'image' => 'img_1.jpg',
-                'icon' => 'img_32.png',
+                'icon' => 'img_43.png',
             ],
             [
                 'title_en' => 'Best Use Analyses',
@@ -68,7 +68,7 @@ class ServicesSeeder extends Seeder
                 'description_ar' => 'نحن نستخدم أحدث استراتيجيات وأدوات التسويق لجذب المشترين أو المستأجرين المناسبين لممتلكاتك.',
                 'slug' => 'best_use_analyses',
                 'image' => 'img_1.jpg',
-                'icon' => 'img_33.png',
+                'icon' => 'img_44.png',
             ],
             [
                 'title_en' => 'Property Valuation',
@@ -79,7 +79,7 @@ class ServicesSeeder extends Seeder
                 'description_ar' => 'يقوم فريقنا بتحليل الاتجاهات، قيم الممتلكات، وظروف السوق لتوفير رؤى تساعدك على زيادة عوائدك.',
                 'slug' => 'property_valuation',
                 'image' => 'img_1.jpg',
-                'icon' => 'img_34.png',
+                'icon' => 'img_45.png',
             ],
         ];
 

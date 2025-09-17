@@ -15,7 +15,7 @@ class HeroSectionSeeder extends Seeder
      */
     public function run(): void
     {
-        $sourceImage = public_path('assets/images/img_24.png');
+        $sourceImage = public_path('assets/images/img_38.png');
         $sourceRent  = public_path('assets/images/img_25.png');
         $sourceProp  = public_path('assets/images/img_26.png');
 
@@ -23,7 +23,7 @@ class HeroSectionSeeder extends Seeder
         $destinationFolder = 'hero-sections';
 
         // Filenames
-        $imageFile = 'img_24.png';
+        $imageFile = 'img_38.png';
         $rentFile  = 'img_25.png';
         $propFile  = 'img_26.png';
 
