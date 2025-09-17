@@ -19,8 +19,8 @@ return new class extends Migration {
             $table->boolean('terrace')->default(false);
             $table->boolean('lift')->default(false);
             $table->string('location')->nullable();
-            $table->decimal('latitude', 10, 7)->nullable();
-            $table->decimal('longitude', 10, 7)->nullable();
+            $table->decimal('latitude')->nullable();
+            $table->decimal('longitude')->nullable();
             $table->string('video')->nullable();
             $table->longText('description')->nullable();
             $table->json('floor_plans')->nullable();
