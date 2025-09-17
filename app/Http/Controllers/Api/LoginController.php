@@ -20,7 +20,11 @@ class LoginController extends Controller
                 'message' => 'The provided credentials do not match our records.',
             ], 401);
         }
-
+        if ($user->role !== 'customer') {
+           return response()->json([
+               'message' => 'The provided credentials are incorrect',
+           ]);
+        }
         $token = $user->createToken('auth-token')->plainTextToken;
         return response()->json([
             'message' => 'Login successful',
