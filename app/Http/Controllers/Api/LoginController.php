@@ -20,7 +20,11 @@ class LoginController extends Controller
                 'phone' => ['The provided credentials are incorrect.'],
             ]);
         }
-
+        if ($user->role !== 'customer') {
+           return response()->json([
+               'message' => 'The provided credentials are incorrect',
+           ]);
+        }
         $token = $user->createToken('auth-token')->plainTextToken;
 
         return response()->json([
