@@ -40,6 +40,7 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
+            'role' => 'customer',
         ]);
 
         $token = $user->createToken('auth-token')->plainTextToken;
