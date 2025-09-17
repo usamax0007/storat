@@ -16,18 +16,17 @@ class LoginController extends Controller
     {
         $user = User::where('phone', $request->phone)->first();
         if (!$user || !Hash::check($request->password, $user->password)) {
-            throw ValidationException::withMessages([
-                'phone' => ['The provided credentials are incorrect.'],
-            ]);
+            return response()->json([
+                'message' => 'The provided credentials do not match our records.',
+            ], 401);
         }
 
         $token = $user->createToken('auth-token')->plainTextToken;
-
         return response()->json([
             'message' => 'Login successful',
             'user' => $user,
             'token' => $token,
-        ]);
+        ], 200);
     }
 
     /**
