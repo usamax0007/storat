@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\PasswordResetController;
 use App\Http\Controllers\Api\PropertyController;
@@ -20,4 +21,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/properties', [PropertyController::class, 'index']);
     Route::get('/properties/{id}', [PropertyController::class, 'show']);
     Route::get('/last-visited', [PropertyController::class, 'lastVisited']);
+
+    Route::get('/favorites', [FavoriteController::class, 'index']);
+    Route::post('/add-to-favorites', [FavoriteController::class, 'store']);
+    Route::post('/remove-from-favorites', [FavoriteController::class, 'remove']);
 });
