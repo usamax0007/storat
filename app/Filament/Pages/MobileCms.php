@@ -2,19 +2,31 @@
 
 namespace App\Filament\Pages;
 
+use Filament\Forms;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Pages\Page;
+use Filament\Forms\Contracts\HasForms;
+use App\Models\MobileCms as MobileCmsModel;
 use Filament\Schemas\Components\Section;
+use Filament\Notifications\Notification;
+use Filament\Support\Icons\Heroicon;
+use UnitEnum;
 
-class MobileCms extends Page implements Forms\Contracts\HasForms
+
+class MobileCms extends Page implements HasForms
 {
-//    protected string $view = 'filament.pages.mobile-cms';
-
     use Forms\Concerns\InteractsWithForms;
 
     protected static ?string $title = 'Mobile CMS';
+
     protected string $view = 'filament.pages.mobile-cms';
+    protected static string | UnitEnum | null $navigationGroup = 'Mobile Cms';
+
+    protected static ?string $navigationLabel = 'CMS';
+    protected static string|null|\BackedEnum $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+
 
     public $privacy_policy = ['en' => '', 'ar' => ''];
     public $terms_conditions = ['en' => '', 'ar' => ''];
@@ -30,7 +42,7 @@ class MobileCms extends Page implements Forms\Contracts\HasForms
 
     public function mount(): void
     {
-        $settings = MobileCms::first();
+        $settings = MobileCmsModel::first();
         if ($settings) {
             $this->fill($settings->toArray());
         }
@@ -65,7 +77,10 @@ class MobileCms extends Page implements Forms\Contracts\HasForms
 
     public function save()
     {
-        MobileCms::updateOrCreate(['id' => 1], $this->form->getState());
-        $this->notify('success', 'Mobile CMS updated successfully.');
+        MobileCmsModel::updateOrCreate(['id' => 1], $this->form->getState());
+        Notification::make()
+            ->success()
+            ->title('Mobile CMS updated successfully.')
+            ->send();
     }
 }

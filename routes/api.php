@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\MobileCmsController;
 use App\Http\Controllers\Api\PasswordResetController;
 use App\Http\Controllers\Api\PropertyCategoriesController;
 use App\Http\Controllers\Api\PropertyController;
@@ -32,5 +33,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/add-to-favorites', [FavoriteController::class, 'store']);
     Route::post('/remove-from-favorites', [FavoriteController::class, 'remove']);
 
+    Route::get('/privacy-policy', [MobileCmsController::class, 'privacy']);
+    Route::get('/terms-condition', [MobileCmsController::class, 'terms']);
+    Route::get('/about-us', [MobileCmsController::class, 'about']);
+    Route::get('/support', [MobileCmsController::class, 'support']);
 
 });
