@@ -17,7 +17,10 @@ class PropertyResource extends JsonResource
         return [
             'id'          => $this->id,
             'name'        => $this->name,
+            'rooms'       => $this->rooms,
+            'floor'       => $this->floor,
             'title'       => $this->title,
+            'purpose_type'       => $this->purpose_type,
             'price'       => $this->price,
             'beds'        => $this->beds,
             'bathrooms'   => $this->bathrooms,
@@ -35,6 +38,8 @@ class PropertyResource extends JsonResource
             'images'      => $this->images ? collect($this->images)->map(fn ($img) => asset('storage/' . $img)) : [],
             'floor_plans' => $this->floor_plans ? collect($this->floor_plans)->map(fn ($plan) => asset('storage/' . $plan)) : [],
             'video'       => $this->video ? asset('storage/' . $this->video) : [],
+            'category' => new CategoryResource($this->category),
+            'property_plan' => new PlanResource($this->plan),
         ];
     }
 }

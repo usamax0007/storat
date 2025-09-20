@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PropertyRequest;
 use App\Http\Resources\PropertyResource;
 use App\Models\LastVisitedProperty;
 use App\Models\Property;
@@ -15,6 +16,8 @@ class PropertyController extends Controller
     public function index(): JsonResponse|AnonymousResourceCollection
     {
         $properties = Property::all();
+
+        $properties->load(['category:id,name_en,name_ar', 'plan']);
 
         if($properties->isEmpty()){
             return response()->json([
@@ -33,6 +36,7 @@ class PropertyController extends Controller
                 'message' => 'Property not found',
             ], 404);
         }
+        $property->load(['category:id,name_en,name_ar', 'plan']);
 
         if (auth()->check()) {
             LastVisitedProperty::updateOrCreate(
@@ -63,5 +67,64 @@ class PropertyController extends Controller
 
         return PropertyResource::collection($properties);
     }
+
+    public function store(PropertyRequest $request): JsonResponse
+    {
+        $images = [];
+        if ($request->hasFile('images')) {
+            $files = $request->file('images');
+            if (!is_array($files)) {
+                $files = [$files];
+            }
+            foreach ($files as $image) {
+                $images[] = $image->store('properties/images', 'public');
+            }
+        }
+
+        $floorPlans = [];
+        if ($request->hasFile('floor_plans')) {
+            $files = $request->file('floor_plans');
+            if (!is_array($files)) {
+                $files = [$files];
+            }
+            foreach ($files as $plan) {
+                $floorPlans[] = $plan->store('properties/floor_plans', 'public');
+            }
+        }
+
+        $videoPath = null;
+        if ($request->hasFile('video')) {
+            $videoPath = $request->file('video')->store('properties/videos', 'public');
+        }
+
+        $property = Property::create(array_merge(
+            $request->validated(),
+            [
+                'images'      => $images,
+                'floor_plans' => $floorPlans,
+                'video'       => $videoPath,
+                'user_id'     => auth()->id(),
+            ]
+        ));
+
+        $property->load(['category:id,name_en,name_ar', 'plan']);
+
+        return response()->json([
+            'message'  => 'Property created',
+            'property' => new PropertyResource($property),
+        ]);
+    }
+
+    public function postedProperties(): AnonymousResourceCollection
+    {
+        $user_id = auth()->id();
+
+        $properties = Property::where('user_id', $user_id)
+            ->with(['category:id,name_en,name_ar', 'plan'])
+            ->get();
+
+        return PropertyResource::collection($properties);
+    }
+
 
 }

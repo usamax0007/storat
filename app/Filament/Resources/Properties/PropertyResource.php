@@ -22,6 +22,7 @@ class PropertyResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Property';
 
+    protected static string|null|\UnitEnum $navigationGroup = 'Properties';
     public static function form(Schema $schema): Schema
     {
         return PropertyForm::configure($schema);

@@ -2,7 +2,9 @@
 
 namespace App\Filament\Resources\Properties\Schemas;
 
+use App\Models\PropertyCategory;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -17,6 +19,12 @@ class PropertyForm
             ->components([
                Section::make('Details')
                 ->schema([
+                    Select::make('category_id')
+                        ->label('Category')
+                        ->options(PropertyCategory::pluck('name_en', 'id'))
+                        ->searchable()
+                        ->required(),
+
                     TextInput::make('name')->required(),
                     TextInput::make('title'),
                     TextInput::make('price')->numeric(),

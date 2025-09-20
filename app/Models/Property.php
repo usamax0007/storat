@@ -10,6 +10,11 @@ class Property extends Model
     use HasFactory;
 
     protected $fillable = [
+        'category_id',
+        'property_plan_id',
+        'rooms',
+        'floor',
+        'purpose_type',
         'images',
         'name',
         'title',
@@ -29,6 +34,7 @@ class Property extends Model
         'call',
         'whatsapp',
         'email',
+        'user_id',
     ];
 
     protected $casts = [
@@ -45,5 +51,19 @@ class Property extends Model
     {
         return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
     }
+
+    public function category()
+    {
+        return $this->belongsTo(PropertyCategory::class, 'category_id');
+    }
+
+    // Relation with Plan
+    public function plan()
+    {
+        return $this->belongsTo(PropertyPlan::class, 'property_plan_id');
+    }
+
+
+
 
 }
