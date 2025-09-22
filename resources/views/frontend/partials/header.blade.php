@@ -3,22 +3,22 @@
         <!-- Hidden checkbox = menu toggle (no JS needed) -->
         <input id="nav-toggle" type="checkbox" class="peer hidden" />
 
-        <div class="grid lg:grid-cols-3 grid-cols-2 items-center py-3">
+        <div class="grid lg:grid-cols-4 grid-cols-2 items-center py-3">
             <!-- Left: Logo -->
             <a href="{{route('home')}}" class="flex items-center">
                 <img src="{{ asset('assets/images/img.png') }}" alt="Logo" class="h-24 md:h-28 w-auto" />
             </a>
 
             <!-- Center: Desktop Menu -->
-            <nav class="hidden lg:flex justify-center">
+            <nav class="hidden lg:col-span-2 lg:flex justify-center">
                 <ul class="grid grid-flow-col whitespace-nowrap gap-6 xl:gap-16 text-xl font-bold text-black">
                     <li><a href="{{ route('home') }}" class="hover:opacity-70">{{ __('home') }}</a></li>
-                    <li><a href="#" class="hover:opacity-70">{{ __('about_us') }}</a></li>
-                    <li><a href="#" class="hover:opacity-70">{{ __('services') }}</a></li>
-                    <li><a href="#" class="hover:opacity-70">{{ __('vision') }}</a></li>
-                    <li><a href="#" class="hover:opacity-70">{{ __('all_projects') }}</a></li>
-                    <li><a href="#" class="hover:opacity-70">{{ __('clients') }}</a></li>
-                    <li><a href="#" class="hover:opacity-70">{{ __('contacts') }}</a></li>
+                    <li><a href="{{ route('home') }}#about-us" class="hover:opacity-70">{{ __('about_us') }}</a></li>
+                    <li><a href="{{ route('home') }}#services" class="hover:opacity-70">{{ __('services') }}</a></li>
+                    <li><a href="{{ route('home') }}#vision" class="hover:opacity-70">{{ __('vision') }}</a></li>
+                    <li><a href="{{ route('home') }}#projects" class="hover:opacity-70">{{ __('all_projects') }}</a></li>
+                    <li><a href="{{ route('home') }}#clients" class="hover:opacity-70">{{ __('clients') }}</a></li>
+                    <li><a href="{{ route('home') }}#contact" class="hover:opacity-70">{{ __('contacts') }}</a></li>
                 </ul>
             </nav>
 
@@ -50,12 +50,12 @@
         <nav class="lg:hidden overflow-hidden max-h-0 peer-checked:max-h-96 transition-all duration-300">
             <ul class="mt-2 mb-3 flex flex-col gap-1 text-xl font-semibold text-black bg-white">
                 <li><a href="{{ route('home') }}" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('home') }}</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('about_us') }}</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('services') }}</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('vision') }}</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('all_projects') }}</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('clients') }}</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('contacts') }}</a></li>
+                <li><a href="{{ route('home') }}#about-us" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('about_us') }}</a></li>
+                <li><a href="{{ route('home') }}#services" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('services') }}</a></li>
+                <li><a href="{{ route('home') }}#vision" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('vision') }}</a></li>
+                <li><a href="{{ route('home') }}#projects" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('all_projects') }}</a></li>
+                <li><a href="{{ route('home') }}#clients" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('clients') }}</a></li>
+                <li><a href="{{ route('home') }}#contact" class="block px-3 py-2 rounded hover:bg-white/40">{{ __('contacts') }}</a></li>
             </ul>
         </nav>
     </div>

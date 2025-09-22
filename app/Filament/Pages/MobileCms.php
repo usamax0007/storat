@@ -24,6 +24,8 @@ class MobileCms extends Page implements HasForms
     protected static string | UnitEnum | null $navigationGroup = 'Mobile Cms';
 
     protected static ?string $navigationLabel = 'CMS';
+
+
     protected static string|null|\BackedEnum $navigationIcon = Heroicon::OutlinedRectangleStack;
 
 

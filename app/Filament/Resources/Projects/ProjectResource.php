@@ -24,6 +24,9 @@ class ProjectResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static string|null|\UnitEnum $navigationGroup = "Web CMS";
+
+
     protected static ?string $recordTitleAttribute = 'Project';
 
     public static function form(Schema $schema): Schema

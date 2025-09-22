@@ -63,7 +63,7 @@
         </div>
     </section>
 
-    <section class="bg-white py-8 md:py-16">
+    <section id="about-us" class="bg-white py-8 md:py-16">
         <div class="mx-auto px-4 lg:px-20">
             <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
 
@@ -99,7 +99,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="bg-[#e9f3fa] py-20">
+    <section id="services" class="bg-[#e9f3fa] py-20">
         <div class="mx-auto px-4 px-10 lg:px-20">
             <h2 class="text-3xl md:text-6xl font-bold text-center text-black mb-28">
                 {{ __('our_services') }}
@@ -126,7 +126,8 @@
             </div>
         </div>
     </section>
-    <section class="bg-white py-12 md:py-20">
+
+    <section id="vision" class="bg-white py-12 md:py-20">
         <div class="mx-auto px-4 lg:px-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center" id="vision-slider">
 
@@ -189,7 +190,7 @@
     </section>
 
 
-    <section class="bg-[#e9f3fa] py-16 md:py-20">
+    <section id="projects" class="bg-[#e9f3fa] py-16 md:py-20">
         <div class="mx-auto">
             <h2 class="text-4xl md:text-6xl lg:text-6xl font-bold text-center text-black tracking-tight">
                 {{ __('latest_projects') }}
@@ -211,7 +212,7 @@
         </div>
     </section>
 
-    <section class="bg-white py-16 md:py-24">
+    <section id="impact" class="bg-white py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 md:px-20">
             <div class="grid items-center gap-10 lg:gap-14 lg:grid-cols-2">
 
@@ -266,7 +267,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="bg-[#e9f3fa] py-16">
+    <section id="contact" class="bg-[#e9f3fa] py-16">
         <div class="mx-auto px-4 md:px-20 text-center">
             <!-- Heading -->
             <h2 class="text-3xl md:text-5xl font-bold text-black leading-snug mb-12">

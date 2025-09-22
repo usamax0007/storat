@@ -90,12 +90,12 @@
             <div class="grid grid-cols-2 gap-10 md:col-span-1 lg:col-span-1">
                 <ul class="space-y-3">
                     <li><a href="{{ route('home') }}" class="font-semibold hover:opacity-80">Home</a></li>
-                    <li><a href="#" class="font-semibold hover:opacity-80">About Us</a></li>
-                    <li><a href="#" class="font-semibold hover:opacity-80">Services</a></li>
-                    <li><a href="#" class="font-semibold hover:opacity-80">Vision</a></li>
-                    <li><a href="#" class="font-semibold hover:opacity-80">All Project</a></li>
-                    <li><a href="#" class="font-semibold hover:opacity-80">Clients</a></li>
-                    <li><a href="#" class="font-semibold hover:opacity-80">Contacts</a></li>
+                    <li><a href="{{ route('home') }}#about-us" class="font-semibold hover:opacity-80">About Us</a></li>
+                    <li><a href="{{ route('home') }}#services" class="font-semibold hover:opacity-80">Services</a></li>
+                    <li><a href="{{ route('home') }}#vision" class="font-semibold hover:opacity-80">Vision</a></li>
+                    <li><a href="{{ route('home') }}#projects" class="font-semibold hover:opacity-80">All Project</a></li>
+                    <li><a href="{{ route('home') }}#clients" class="font-semibold hover:opacity-80">Clients</a></li>
+                    <li><a href="{{ route('home') }}#contact" class="font-semibold hover:opacity-80">Contacts</a></li>
                 </ul>
             </div>
 

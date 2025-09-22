@@ -31,6 +31,7 @@ class HeroSectionResource extends Resource
     protected static ?string $model = HeroSection::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|null|\UnitEnum $navigationGroup = "Web CMS";
 
     protected static ?string $recordTitleAttribute = 'HeroSection';
 

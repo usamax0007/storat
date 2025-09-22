@@ -13,6 +13,7 @@ use Filament\Pages\Page;
 use Filament\Schemas\Components\Section;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Contracts\Support\Htmlable;
+use UnitEnum;
 
 class AboutSection extends Page implements HasForms
 {
@@ -22,6 +23,8 @@ class AboutSection extends Page implements HasForms
     protected static ?string $title = 'About Us';
 
     protected static ?string $navigationLabel = null;
+
+    protected static string | UnitEnum | null $navigationGroup = "Web CMS";
 
     public function getTitle(): Htmlable|string
     {

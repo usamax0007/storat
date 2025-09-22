@@ -19,6 +19,9 @@ class CmsSettings extends Page implements HasForms
     protected string $view = 'filament.pages.cms-settings';
     protected static ?string $title = 'CMS Settings';
 
+    protected static string|null|\UnitEnum $navigationGroup = "Web CMS";
+
+
     public $phone1;
     public $phone2;
     public $phone3;

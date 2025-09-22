@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Widgets\DashboardStats;
+use App\Filament\Widgets\DashboardStats2;
 use App\Filament\Widgets\LanguageSwitcher;
 use App\Http\Middleware\SetLocale;
 use Filament\Http\Middleware\Authenticate;
@@ -35,10 +37,24 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
+            ->darkMode(false)
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => [
+                    50  => '#f2f7fb',
+                    100 => '#d9e6f2',
+                    200 => '#b3cee3',
+                    300 => '#8db6d4',
+                    400 => '#5f95bf',
+                    500 => '#10568f',
+                    600 => '#0e4a7b',
+                    700 => '#0c3e66',
+                    800 => '#092f4d',
+                    900 => '#071f33',
+                    950 => '#04111f',
+                ],
+
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
@@ -47,10 +63,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
-                LanguageSwitcher::class,
+                DashboardStats2::class,
             ])
+            ->viteTheme('resources/css/filament/admin/theme.css')
+            ->brandName('Storat')
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
