@@ -33,7 +33,8 @@ class PropertyController extends Controller
         if ($request->filled('max_price')) {
             $query->where('price', '<=', $request->max_price);
         }
-        $properties = $query->get();
+
+        $properties = $query->orderBy('top_advertisement_no_of_days', 'desc')->get();
 
         if ($properties->isEmpty()) {
             return response()->json([
@@ -43,6 +44,7 @@ class PropertyController extends Controller
 
         return PropertyResource::collection($properties);
     }
+
     public function show($id): PropertyResource|JsonResponse
     {
         $property = Property::find($id);
