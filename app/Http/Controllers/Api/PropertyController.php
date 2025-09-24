@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PropertiesRequest;
 use App\Http\Requests\PropertyRequest;
 use App\Http\Resources\PropertyResource;
 use App\Models\LastVisitedProperty;
@@ -13,20 +14,35 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class PropertyController extends Controller
 {
-    public function index(): JsonResponse|AnonymousResourceCollection
+    public function index(PropertiesRequest $request): JsonResponse|AnonymousResourceCollection
     {
-        $properties = Property::all();
+        $query = Property::query()->with(['category:id,name_en,name_ar', 'plan']);
 
-        $properties->load(['category:id,name_en,name_ar', 'plan']);
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
+        }
+        if ($request->filled('sub_category_id')) {
+            $query->where('sub_category_id', $request->sub_category_id);
+        }
+        if ($request->filled('purpose_type')) {
+            $query->where('purpose_type', $request->purpose_type);
+        }
+        if ($request->filled('min_price')) {
+            $query->where('price', '>=', $request->min_price);
+        }
+        if ($request->filled('max_price')) {
+            $query->where('price', '<=', $request->max_price);
+        }
+        $properties = $query->get();
 
-        if($properties->isEmpty()){
+        if ($properties->isEmpty()) {
             return response()->json([
                 'message' => 'No properties found',
             ], 404);
         }
+
         return PropertyResource::collection($properties);
     }
-
     public function show($id): PropertyResource|JsonResponse
     {
         $property = Property::find($id);

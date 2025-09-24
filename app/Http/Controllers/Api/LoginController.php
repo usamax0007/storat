@@ -43,6 +43,7 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
+            'country_code' => $request->country_code,
             'role' => 'customer',
         ]);
 

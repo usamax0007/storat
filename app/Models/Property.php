@@ -10,7 +10,16 @@ class Property extends Model
     use HasFactory;
 
     protected $fillable = [
+        'top_list',
+        'wifi',
+        'pool',
+        'furnished',
+        'parking',
+        'fitness',
+        'sea_view',
+        'maid_room',
         'category_id',
+        'sub_category_id',
         'property_plan_id',
         'rooms',
         'floor',

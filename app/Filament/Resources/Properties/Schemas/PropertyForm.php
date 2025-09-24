@@ -2,7 +2,9 @@
 
 namespace App\Filament\Resources\Properties\Schemas;
 
+use App\Models\Property;
 use App\Models\PropertyCategory;
+use App\Models\PropertySubCategory;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -23,8 +25,21 @@ class PropertyForm
                         ->label('Category')
                         ->options(PropertyCategory::pluck('name_en', 'id'))
                         ->searchable()
-                        ->required(),
+                        ->required()
+                        ->reactive(),
 
+                    Select::make('sub_category_id')
+                        ->label('Sub Category')
+                        ->options(function (callable $get) {
+                            $categoryId = $get('category_id');
+                            if (!$categoryId) {
+                                return [];
+                            }
+                            return PropertySubCategory::where('property_category_id', $categoryId)
+                                ->pluck('name_en', 'id');
+                        })
+                        ->searchable()
+                        ->required(),
                     TextInput::make('name')->required(),
                     TextInput::make('title'),
                     TextInput::make('price')->numeric(),
